@@ -29,9 +29,8 @@ ActiveRecord::Schema.define(version: 2019_10_09_132454) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "product_id"
-    t.integer "quantity"
     t.float "total"
+    t.integer "quantity"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 

@@ -12,18 +12,19 @@
             <b> Price :</b> <%= product.price %> ₹ <br>               
             <b> Brand :</b> <%= product.brand %><br>          
             <b> Description :</b> <%= product.description %><br>              
-            <b> Offer :</b> <%= product.offer %><br>              
+            <b> Offer :</b> <%= product.offer %><br>
+            <b> Quantity :</b> <%= cart.quantity %><br>               
             <b><%= link_to 'Show',product_path(product) %> </b><br>              
-            <%= form_with(model:  @order,  url: orders_path(order: @order), method: "post", local: true) do |form| %>
+            <%= form_with(model: @order,  url: orders_path(order: @order), method: "post", local: true) do |form| %>
                 <p><%= form.hidden_field :product_id, value: product.id %></p>
                 <p><%= form.hidden_field :quantity, value: cart.quantity %></p>
                 <p><%= form.submit 'Buy',class: 'btn btn-success'%></p>
-              <%end%>
+            <% end %>
               <b><%= link_to 'Remove', cart, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></b>
           </div>
-        <%end%>        
-      <%end%>
-    <%end%>
+        <% end %>        
+      <% end %>
+    <% end %>
   </div>
 </div>
 

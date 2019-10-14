@@ -1,13 +1,10 @@
 class CartsController < ApplicationController
-
- before_action :set_cart, only: [:destroy]
- after_action :add,  only:[:create]
-
+	
+  before_action :get_cart, only: [:destroy]
+  after_action :add_to_carts_products,  only:[:create]
 
 	def index
 		@carts = Cart.all
-		@products = Product.all
-
 	end
 
 	def create
@@ -28,19 +25,24 @@ class CartsController < ApplicationController
 	end
 	
 	private 
-	  def set_cart
+
+	#detect which record to be deleted
+	def get_cart
 		@cart = Cart.find(params[:id])
 	end
 
-	  def cart_params
-			params.permit(:quantity)
-	  end
+  def cart_params
+		params.permit(:quantity)
+  end
 
-
-	def add
-	  @product = Product.find(params[:product_id])
-	  @product.carts << @cart
-	  flash[:notice] = 'Product was saved.'
-		end
-
+	#add record to join tables
+	def add_to_carts_products
+		begin
+		  @product = Product.find(params[:product_id])
+		  @product.carts << @cart
+		  flash[:notice] = 'Product was saved.'
+		rescue StandardError => e
+   	  print e
+    end
+  end
 end

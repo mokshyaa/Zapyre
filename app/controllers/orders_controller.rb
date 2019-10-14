@@ -1,13 +1,13 @@
 class OrdersController < ApplicationController
 
-  after_action :add , only: [:create]
-  before_action :set_order , only: [:destroy]
+  after_action :add_to_orders_products , only: [:create]
+  before_action :get_order , only: [:destroy]
+  before_action :get_quantity, only: [:create]
 
 	def index
 		@orders = Order.all
-		@products = Product.all
 	end
-
+		
 	def create
 	  @order = Order.new(order_params)
 	  @order.user_id = current_user.id
@@ -33,8 +33,8 @@ class OrdersController < ApplicationController
  	end
 	
 	private 
-
-	def set_order
+	#detect which record to be deleted
+	def get_order
 		begin
    	  @order = Order.find(params[:id])
    	rescue StandardError => e
@@ -43,16 +43,20 @@ class OrdersController < ApplicationController
   end
 
   def order_params
-		params.permit(:total)
-
+		params.permit(:total,:quantity)
 	end
-	def product_params
-		params.permit(:product_id)
+	#add record to join tables
+	def add_to_orders_products
+		begin
+		  @product = Product.find(params[:product_id])
+		  @product.orders << @order
+		  flash[:notice] = 'Product was saved.'
+	  rescue StandardError => e
+   	  print e
+    end
 	end
-
-	def add
-	  @product = Product.find(params[:product_id])
-	  @product.orders << @order
-	  flash[:notice] = 'Product was saved.'
+	def get_quantity
+		@carts = Cart.all
+		@get_quantity = params.permit(:quantity)
 	end
 end

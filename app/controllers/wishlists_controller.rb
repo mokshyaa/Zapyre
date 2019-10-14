@@ -1,10 +1,10 @@
 class WishlistsController < ApplicationController
- before_action :set_wishlist, only: [:destroy]
- after_action :add, only: [:create]
+	
+ before_action :get_wishlist, only: [:destroy]
+ after_action :add_to_products_wishlists, only: [:create]
 
 	def index
 		@wishlists = Wishlist.all
-		@products = Product.all
 	end
 
 	def create
@@ -22,18 +22,24 @@ class WishlistsController < ApplicationController
 		respond_to do |format|
     	  format.html { redirect_to wishlists_url, notice: 'Product was successfully destroyed.' }
     	end
-    end
+  end
 	
 	private 
 
-	def set_wishlist
-     	@wishlist = Wishlist.find(params[:id])
+	#detect which record to be deleted
+	def get_wishlist
+   	@wishlist = Wishlist.find(params[:id])
+  end
+  
+  #add record to join tables
+  def add_to_products_wishlists
+  	begin
+		  @product = Product.find(params[:product_id])
+		  @product.wishlists << @wishlist
+		  flash[:notice] = 'Product was saved.'
+	  rescue StandardError => e
+   	  print e
     end
-
-    def add
-	  @product = Product.find(params[:product_id])
-	  @product.wishlists << @wishlist
-	  flash[:notice] = 'Product was saved.'
 	end
     
 
