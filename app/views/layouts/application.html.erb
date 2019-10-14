@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Zapyre</title>
+		<%= csrf_meta_tags %>
+		<%= csp_meta_tag %>
+	
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse" style="min-height: 40px; margin: 0px;"	>
+				<div class="navbar-header">
+					<%= image_tag ("Zapyre.jpg"),  height: "50" ,width: "50" ,class: "img-circle" %>
+				</div>
+				
+					<ul class="nav navbar-nav">
+						<li><%= link_to 'Zapyre',intros_index_path, class: 'navbar-brand' %></li>
+						<li><%= link_to 'Home',  products_path %></li>
+					</ul>
+					<ul class="nav navbar-nav pull-right">
+						<% if user_signed_in? %>
+							<% unless current_user.admin? %>
+								<li> <%= link_to 'Cart', carts_path %></li>          
+								<li> <%= link_to 'Wishlist', wishlists_path  %></li>
+								<li> <%= link_to 'Orders', orders_path  %></li>					
+							<%end%>
+							
+								<li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+									<strong><%= current_user.name %></strong>
+								</a>
+								<ul class="dropdown-menu" role="menu">
+									<li><%= link_to 'Profile', edit_user_registration_path %></li>
+									<li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+								</ul>
+							  </li>
+							  <li><%= image_tag current_user.avatar(:thumb)  , height: "40" ,width: "40",class: "img-circle" %></li>
+						<% else %>
+							<li><%= link_to 'Log In', new_user_session_path %></li>
+							<li><%= link_to 'Sign Up', new_user_registration_path %></li>
+						<% end %>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<%= yield :top_content %>
+			<%= yield %>		
+	  <%= yield :down_content %>
+	</body>
+</html>
