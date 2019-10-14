@@ -21,6 +21,8 @@
                 <p><%= form.hidden_field :quantity, value: cart.quantity %></p>
                 <p><%= form.submit 'Buy',class: 'btn btn-success'%></p>
               <%end%>
+
+
               <b><%= link_to 'Remove', cart, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></b>
             </div>
           <%end%>
