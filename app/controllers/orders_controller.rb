@@ -2,7 +2,6 @@ class OrdersController < ApplicationController
 
   after_action :add_to_orders_products , only: [:create]
   before_action :get_order , only: [:destroy]
-  before_action :get_quantity, only: [:create]
 
 	def index
 		@orders = Order.all
@@ -54,9 +53,5 @@ class OrdersController < ApplicationController
 	  rescue StandardError => e
    	  print e
     end
-	end
-	def get_quantity
-		@carts = Cart.all
-		@get_quantity = params.permit(:quantity)
 	end
 end

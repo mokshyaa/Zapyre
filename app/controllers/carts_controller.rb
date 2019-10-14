@@ -18,10 +18,14 @@ class CartsController < ApplicationController
 	end
 	
 	def destroy
-		@cart.destroy
-		respond_to do |format|
-	  format.html { redirect_to carts_url, notice: 'Product was successfully destroyed.' }
-	end
+		begin
+			@cart.destroy
+				respond_to do |format|
+			  format.html { redirect_to carts_url, notice: 'Product was successfully destroyed.' }
+				end
+	  rescue StandardError => e
+			print e
+		end 			
 	end
 	
 	private 

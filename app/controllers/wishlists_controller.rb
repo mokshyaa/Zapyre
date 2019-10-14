@@ -18,10 +18,14 @@ class WishlistsController < ApplicationController
 	end
 	
 	def destroy
-		@wishlist.destroy
-		respond_to do |format|
-    	  format.html { redirect_to wishlists_url, notice: 'Product was successfully destroyed.' }
-    	end
+		begin
+			@wishlist.destroy
+			respond_to do |format|
+	    	  format.html { redirect_to wishlists_url, notice: 'Product was successfully destroyed.' }
+	    	end
+    rescue StandardError => e
+   	  print e
+    end
   end
 	
 	private 
@@ -41,6 +45,4 @@ class WishlistsController < ApplicationController
    	  print e
     end
 	end
-    
-
 end
