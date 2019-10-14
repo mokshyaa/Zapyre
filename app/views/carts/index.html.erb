@@ -3,30 +3,25 @@
 </div>
 <div class="container">
   <div class="row">
-    <% @products.each do |product_c|%>
-      <% product_c.carts.each do |cart|   %>
-        <% @products.each do |product| %>
-          <%if product_c.id == product.id%>
-            <div class="col-md-4" style="box-shadow: 8px 8px 5px #aaaaaa;"><br>          
-              <%= image_tag product.image.url(:medium),height: "200>", width: "200>"  ,class: "rounded mx-auto d-block"%> <br>                
-                <b> Name :</b> <%= product.name %><br>               
-                <b> Price :</b> <%= product.price %> ₹ <br>               
-                <b> Brand :</b> <%= product.brand %><br>          
-                <b> Description :</b> <%= product.description %><br>              
-                <b> Offer :</b> <%= product.offer %><br>              
-                <b><%= link_to 'Show',product_path(product) %> </b><br>         
-                    
-              <%= form_with(model:  @order,  url: orders_path(order: @order, cart: @cart), method: "post", local: true) do |form| %>
-                <p><%= form.hidden_field :product_id, value: product_c.id %></p>
+    <% @carts.each do |cart|%>
+      <%if cart.user_id == current_user.id %>
+        <% cart.products.each do |product|%>
+          <div class="col-md-4" style="box-shadow: 8px 8px 5px #aaaaaa;"><br>          
+            <%= image_tag product.image.url(:medium),height: "200>", width: "200>"  ,class: "rounded mx-auto d-block"%> <br>                
+            <b> Name :</b> <%= product.name %><br>               
+            <b> Price :</b> <%= product.price %> ₹ <br>               
+            <b> Brand :</b> <%= product.brand %><br>          
+            <b> Description :</b> <%= product.description %><br>              
+            <b> Offer :</b> <%= product.offer %><br>              
+            <b><%= link_to 'Show',product_path(product) %> </b><br>              
+            <%= form_with(model:  @order,  url: orders_path(order: @order), method: "post", local: true) do |form| %>
+                <p><%= form.hidden_field :product_id, value: product.id %></p>
                 <p><%= form.hidden_field :quantity, value: cart.quantity %></p>
                 <p><%= form.submit 'Buy',class: 'btn btn-success'%></p>
               <%end%>
-
-
               <b><%= link_to 'Remove', cart, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></b>
-            </div>
-          <%end%>
-        <%end%>
+          </div>
+        <%end%>        
       <%end%>
     <%end%>
   </div>

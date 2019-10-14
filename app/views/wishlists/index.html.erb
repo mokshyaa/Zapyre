@@ -3,45 +3,37 @@
 </div>
 <div class="container">
   <div class="row">
-		<% @products.each do |product_w|%>
-			<% product_w.wishlists.each do |wishlist| %>
-			  <% @products.each do |product| %>
-			 	  <%if product_w.id == product.id%>
-					  <div class="col-md-4" style="box-shadow: 8px 8px 5px #aaaaaa;">          
-		          <%= image_tag product.image.url(:medium),height: "200>", width: "200>"  ,class: "rounded mx-auto d-block"%> <br>
-		            <b> Name :</b> <%= product.name %><br>
-		             
-		            <b> Price :</b> <%= product.price %> ₹ <br>
-		             
-		            <b> Brand :</b> <%= product.brand %><br>
-		        
-		            <b> Description :</b> <%= product.description %><br>
-		            
-		            <b> Offer :</b> <%= product.offer %><br>
-		            
-		            <% if user_signed_in? %>
-									<% unless current_user.admin? %>								  					
-										<%= form_with(model:  @cart,  url: carts_path(order: @order, cart: @cart), method: "post", local: true) do |form| %>
-											<p><%= form.hidden_field :product_id, value: product.id  %></p>
-											<p>
-												<%= form.label :quantity %><br>
-												<%= form.number_field :quantity %>
-											</p><br>
-											<div class="row">
-												<div class="col-md-6">
-													<p><%= form.submit 'Add to Cart', class: 'btn btn-success '%></p>
-											<% end %>
-												</div>
-													<b><%= link_to 'Remove', wishlist, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></b>
-											</div>	
-										<% end %>
+		<% @wishlists.each do |wishlist|%>
+			<%if wishlist.user_id == current_user.id %>
+			  <% wishlist.products.each do |product| %>
+			 	 	<div class="col-md-4" style="box-shadow: 8px 8px 5px #aaaaaa;">          
+		        <%= image_tag product.image.url(:medium),height: "200>", width: "200>"  ,class: "rounded mx-auto d-block"%> <br>
+		        <b> Name :</b> <%= product.name %><br>
+		        <b> Price :</b> <%= product.price %> ₹ <br>
+		        <b> Brand :</b> <%= product.brand %><br>
+		        <b> Description :</b> <%= product.description %><br>
+		        <b> Offer :</b> <%= product.offer %><br>
+		        <% if user_signed_in? %>
+							<% unless current_user.admin? %>								  					
+								<%= form_with(model:  @cart,  url: carts_path(order: @order, cart: @cart), method: "post", local: true) do |form| %>
+									<p><%= form.hidden_field :product_id, value: product.id  %></p>
+									<p>
+										<%= form.label :quantity %><br>
+										<%= form.number_field :quantity %>
+									</p><br>
+										<div class="row">
+											<div class="col-md-6">
+												<p><%= form.submit 'Add to Cart', class: 'btn btn-success '%></p>
 								<% end %>
-							
-				    </div>
-				 	<%end%>
-			  <%end%>
-		  <%end%>
-		<%end%>
+											</div>
+											<b><%= link_to 'Remove', wishlist, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></b>
+										</div>	
+							<% end %>
+						<% end %>
+					</div>
+			 	<% end %>
+			<% end %>
+	  <% end %>
   </div>
 </div>
 

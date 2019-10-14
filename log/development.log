@@ -47956,3 +47956,1576 @@ Migrating to AddColumnToOrder (20191009132454)
   ↳ bin/rails:9
   [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
   ↳ bin/rails:9
+Started GET "/orders" for ::1 at 2019-10-14 11:53:24 +0530
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/pc-14/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/pc-14/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/orders/index.html.erb:6
+  [1m[36mOrder Load (1.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 1[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 2[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 3[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 4[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCart Load (0.8ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.9ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (1.1ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m
+  ↳ app/models/order.rb:39
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders`[0m
+  ↳ app/views/orders/index.html.erb:26
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m  [["product_id", 1]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m  [["product_id", 2]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m  [["product_id", 3]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m  [["product_id", 4]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m  [["product_id", 5]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m  [["product_id", 6]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m  [["product_id", 1]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m  [["product_id", 2]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m  [["product_id", 3]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m  [["product_id", 4]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.1ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m  [["product_id", 5]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.1ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m  [["product_id", 6]]
+  ↳ app/models/order.rb:39
+  [1m[36mOrder Load (1.4ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 5[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.9ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 6[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m  [["product_id", 1]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m  [["product_id", 2]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m  [["product_id", 3]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m  [["product_id", 4]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m  [["product_id", 5]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m  [["product_id", 6]]
+  ↳ app/models/order.rb:39
+  Rendered orders/index.html.erb within layouts/application (149.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:23
+Completed 200 OK in 424ms (Views: 369.5ms | ActiveRecord: 16.3ms)
+
+
+Started GET "/orders" for ::1 at 2019-10-14 11:53:49 +0530
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/orders/index.html.erb:6
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 1[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 2[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 3[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 4[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCart Load (0.7ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m
+  ↳ app/models/order.rb:39
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT `orders`.* FROM `orders`[0m
+  ↳ app/views/orders/index.html.erb:26
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m  [["product_id", 1]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCACHE Cart Load (0.1ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m  [["product_id", 2]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m  [["product_id", 3]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m  [["product_id", 4]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m  [["product_id", 5]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m  [["product_id", 6]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m  [["product_id", 1]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m  [["product_id", 2]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m  [["product_id", 3]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m  [["product_id", 4]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m  [["product_id", 5]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m  [["product_id", 6]]
+  ↳ app/models/order.rb:39
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 5[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 6[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m  [["product_id", 1]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m  [["product_id", 2]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m  [["product_id", 3]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m  [["product_id", 4]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m  [["product_id", 5]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m  [["product_id", 6]]
+  ↳ app/models/order.rb:39
+  Rendered orders/index.html.erb within layouts/application (48.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:23
+Completed 200 OK in 123ms (Views: 115.5ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/orders" for ::1 at 2019-10-14 11:54:01 +0530
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/orders/index.html.erb:6
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 1[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (1.3ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 2[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 3[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 4[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m
+  ↳ app/models/order.rb:39
+  [1m[36mOrder Load (0.9ms)[0m  [1m[34mSELECT `orders`.* FROM `orders`[0m
+  ↳ app/views/orders/index.html.erb:26
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m  [["product_id", 1]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m  [["product_id", 2]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m  [["product_id", 3]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m  [["product_id", 4]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m  [["product_id", 5]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m  [["product_id", 6]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m  [["product_id", 1]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m  [["product_id", 2]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m  [["product_id", 3]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m  [["product_id", 4]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m  [["product_id", 5]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m  [["product_id", 6]]
+  ↳ app/models/order.rb:39
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 5[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 6[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m  [["product_id", 1]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m  [["product_id", 2]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m  [["product_id", 3]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m  [["product_id", 4]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m  [["product_id", 5]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m  [["product_id", 6]]
+  ↳ app/models/order.rb:39
+  Rendered orders/index.html.erb within layouts/application (67.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:23
+Completed 200 OK in 137ms (Views: 127.7ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/orders" for ::1 at 2019-10-14 11:54:13 +0530
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/orders/index.html.erb:6
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 1[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 2[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 3[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 4[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCart Load (0.6ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.6ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m
+  ↳ app/models/order.rb:39
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT `orders`.* FROM `orders`[0m
+  ↳ app/views/orders/index.html.erb:26
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m  [["product_id", 1]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m  [["product_id", 2]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m  [["product_id", 3]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m  [["product_id", 4]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m  [["product_id", 5]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m  [["product_id", 6]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m  [["product_id", 1]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m  [["product_id", 2]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m  [["product_id", 3]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m  [["product_id", 4]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m  [["product_id", 5]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m  [["product_id", 6]]
+  ↳ app/models/order.rb:39
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 5[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 6[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m  [["product_id", 1]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m  [["product_id", 2]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m  [["product_id", 3]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m  [["product_id", 4]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m  [["product_id", 5]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m  [["product_id", 6]]
+  ↳ app/models/order.rb:39
+  Rendered orders/index.html.erb within layouts/application (44.4ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:23
+Completed 200 OK in 91ms (Views: 83.1ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/orders" for ::1 at 2019-10-14 11:55:18 +0530
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/orders/index.html.erb:6
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 1[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 2[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 3[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 4[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.7ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.6ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m
+  ↳ app/models/order.rb:39
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders`[0m
+  ↳ app/views/orders/index.html.erb:26
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m  [["product_id", 1]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m  [["product_id", 2]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m  [["product_id", 3]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m  [["product_id", 4]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m  [["product_id", 5]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m  [["product_id", 6]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m  [["product_id", 1]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m  [["product_id", 2]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m  [["product_id", 3]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m  [["product_id", 4]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m  [["product_id", 5]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m  [["product_id", 6]]
+  ↳ app/models/order.rb:39
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 5[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 6[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m  [["product_id", 1]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m  [["product_id", 2]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m  [["product_id", 3]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m  [["product_id", 4]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m  [["product_id", 5]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m  [["product_id", 6]]
+  ↳ app/models/order.rb:39
+  Rendered orders/index.html.erb within layouts/application (39.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:23
+Completed 200 OK in 69ms (Views: 61.9ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/products" for ::1 at 2019-10-14 11:56:20 +0530
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/products/_products_all.html.erb:4
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/_products_all.html.erb:13
+  Rendered products/_products_all.html.erb (18.0ms)
+  Rendered products/index.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 68ms (Views: 65.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products" for ::1 at 2019-10-14 11:56:22 +0530
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/products/_products_all.html.erb:4
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/_products_all.html.erb:13
+  Rendered products/_products_all.html.erb (12.3ms)
+  Rendered products/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 48ms (Views: 46.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/carts" for ::1 at 2019-10-14 11:56:26 +0530
+Processing by CartsController#index as HTML
+  Rendering carts/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/carts/index.html.erb:6
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m
+  ↳ app/views/carts/index.html.erb:7
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m
+  ↳ app/views/carts/index.html.erb:7
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m
+  ↳ app/views/carts/index.html.erb:7
+  [1m[36mCart Load (0.9ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m
+  ↳ app/views/carts/index.html.erb:7
+  [1m[36mCart Load (1.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m
+  ↳ app/views/carts/index.html.erb:7
+  [1m[36mCart Load (0.8ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m
+  ↳ app/views/carts/index.html.erb:7
+  Rendered carts/index.html.erb within layouts/application (25.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:23
+Completed 200 OK in 58ms (Views: 52.3ms | ActiveRecord: 4.8ms)
+
+
+Started POST "/orders" for ::1 at 2019-10-14 11:56:27 +0530
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F+VClL9iUpiyvohzsKUcQpdYQMoqQCesujRYpksn0UcK/czdZ7jrhLt3FzK3v9rQrA1PxeuUJvyFKpJK8p83zg==", "product_id"=>"4", "quantity"=>"1", "commit"=>"Buy"}
+Unpermitted parameters: :utf8, :authenticity_token, :product_id, :quantity, :commit
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCart Load (0.8ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (1.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.6ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m
+  ↳ app/models/order.rb:39
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/orders_controller.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:15
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/orders_controller.rb:15
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:21
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 1[0m
+  ↳ app/models/order.rb:22
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 2[0m
+  ↳ app/models/order.rb:22
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 3[0m
+  ↳ app/models/order.rb:22
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 4[0m
+  ↳ app/models/order.rb:22
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m  [["product_id", 1]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m  [["product_id", 2]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m  [["product_id", 3]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m  [["product_id", 4]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m  [["product_id", 5]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m  [["product_id", 6]]
+  ↳ app/models/order.rb:39
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT `orders`.* FROM `orders`[0m
+  ↳ app/models/order.rb:23
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m  [["product_id", 1]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m  [["product_id", 2]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m  [["product_id", 3]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m  [["product_id", 4]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m  [["product_id", 5]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m  [["product_id", 6]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m  [["product_id", 1]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m  [["product_id", 2]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m  [["product_id", 3]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m  [["product_id", 4]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m  [["product_id", 5]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m  [["product_id", 6]]
+  ↳ app/models/order.rb:39
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 5[0m
+  ↳ app/models/order.rb:22
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 6[0m
+  ↳ app/models/order.rb:22
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m  [["product_id", 1]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m  [["product_id", 2]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m  [["product_id", 3]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m  [["product_id", 4]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m  [["product_id", 5]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m  [["product_id", 6]]
+  ↳ app/models/order.rb:39
+  [1m[36mOrder Create (0.6ms)[0m  [1m[32mINSERT INTO `orders` (`user_id`, `created_at`, `updated_at`) VALUES (2, '2019-10-14 06:26:27', '2019-10-14 06:26:27')[0m
+  ↳ app/controllers/orders_controller.rb:15
+  [1m[35m (31.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:15
+Redirected to http://localhost:3000/orders
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/orders_controller.rb:54
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:55
+  [1m[36mProduct::HABTM_Orders Create (0.3ms)[0m  [1m[32mINSERT INTO `orders_products` (`product_id`, `order_id`) VALUES (4, 89)[0m
+  ↳ app/controllers/orders_controller.rb:55
+  [1m[35m (50.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:55
+Completed 302 Found in 168ms (ActiveRecord: 91.8ms)
+
+
+Started GET "/orders" for ::1 at 2019-10-14 11:56:27 +0530
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/orders/index.html.erb:6
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 1[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 2[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 3[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 4[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCart Load (0.7ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.8ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m  [["product_id", 1]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m  [["product_id", 2]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m  [["product_id", 3]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m  [["product_id", 4]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m  [["product_id", 5]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m  [["product_id", 6]]
+  ↳ app/models/order.rb:39
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT `orders`.* FROM `orders`[0m
+  ↳ app/views/orders/index.html.erb:26
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m  [["product_id", 1]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m  [["product_id", 2]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m  [["product_id", 3]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m  [["product_id", 4]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m  [["product_id", 5]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m  [["product_id", 6]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m  [["product_id", 1]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m  [["product_id", 2]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m  [["product_id", 3]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m  [["product_id", 4]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m  [["product_id", 5]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m  [["product_id", 6]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m  [["product_id", 1]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m  [["product_id", 2]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m  [["product_id", 3]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m  [["product_id", 4]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m  [["product_id", 5]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m  [["product_id", 6]]
+  ↳ app/models/order.rb:39
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 5[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 6[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m  [["product_id", 1]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m  [["product_id", 2]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m  [["product_id", 3]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m  [["product_id", 4]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m  [["product_id", 5]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m  [["product_id", 6]]
+  ↳ app/models/order.rb:39
+  Rendered orders/index.html.erb within layouts/application (40.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:23
+Completed 200 OK in 71ms (Views: 63.9ms | ActiveRecord: 6.1ms)
+
+
+Started DELETE "/orders/88" for ::1 at 2019-10-14 11:56:31 +0530
+Processing by OrdersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"j0Zm9s7m+xde6fwEyYL/GpHB+T70JPiRjesQIVvY9HOvHGqRarDuVEc6zKp1qouCNUCOm8edUsiZGzCWbmRGew==", "id"=>"88"}
+  [1m[36mOrder Load (1.0ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 88 LIMIT 1[0m
+  ↳ app/controllers/orders_controller.rb:39
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.7ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m
+  ↳ app/models/order.rb:39
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:25
+  [1m[36mOrder::HABTM_Products Destroy (0.4ms)[0m  [1m[31mDELETE FROM `orders_products` WHERE `orders_products`.`order_id` = 88[0m
+  ↳ app/controllers/orders_controller.rb:25
+  [1m[36mOrder Destroy (0.6ms)[0m  [1m[31mDELETE FROM `orders` WHERE `orders`.`id` = 88[0m
+  ↳ app/controllers/orders_controller.rb:25
+  [1m[35m (56.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:25
+Redirected to http://localhost:3000/orders
+Completed 302 Found in 78ms (ActiveRecord: 61.5ms)
+
+
+Started GET "/orders" for ::1 at 2019-10-14 11:56:31 +0530
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/orders/index.html.erb:6
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 1[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 2[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 3[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 4[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCart Load (0.6ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.6ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.8ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (1.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m  [["product_id", 1]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m  [["product_id", 2]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m  [["product_id", 3]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m  [["product_id", 4]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.1ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m  [["product_id", 5]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m  [["product_id", 6]]
+  ↳ app/models/order.rb:39
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT `orders`.* FROM `orders`[0m
+  ↳ app/views/orders/index.html.erb:26
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m  [["product_id", 1]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m  [["product_id", 2]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m  [["product_id", 3]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m  [["product_id", 4]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m  [["product_id", 5]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m  [["product_id", 6]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m  [["product_id", 1]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m  [["product_id", 2]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m  [["product_id", 3]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m  [["product_id", 4]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m  [["product_id", 5]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m  [["product_id", 6]]
+  ↳ app/models/order.rb:39
+  [1m[36mOrder Load (1.0ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 5[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 6[0m
+  ↳ app/views/orders/index.html.erb:7
+  Rendered orders/index.html.erb within layouts/application (50.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:23
+Completed 200 OK in 95ms (Views: 86.1ms | ActiveRecord: 7.4ms)
+
+
+Started DELETE "/orders/89" for ::1 at 2019-10-14 11:56:34 +0530
+Processing by OrdersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"aokNZd0TUMeeZT7pgAccwR2h/POfYEmLptTHWaGd0m9K0wECeUVFhIe2Dkc8L2hZuSCLVqzZ49KyJOfulCFgZw==", "id"=>"89"}
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 89 LIMIT 1[0m
+  ↳ app/controllers/orders_controller.rb:39
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m
+  ↳ app/models/order.rb:39
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:25
+  [1m[36mOrder::HABTM_Products Destroy (0.2ms)[0m  [1m[31mDELETE FROM `orders_products` WHERE `orders_products`.`order_id` = 89[0m
+  ↳ app/controllers/orders_controller.rb:25
+  [1m[36mOrder Destroy (0.1ms)[0m  [1m[31mDELETE FROM `orders` WHERE `orders`.`id` = 89[0m
+  ↳ app/controllers/orders_controller.rb:25
+  [1m[35m (26.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:25
+Redirected to http://localhost:3000/orders
+Completed 302 Found in 39ms (ActiveRecord: 29.3ms)
+
+
+Started GET "/orders" for ::1 at 2019-10-14 11:56:34 +0530
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/orders/index.html.erb:6
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 1[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 2[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 3[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 4[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.6ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (1.1ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.6ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.6ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m
+  ↳ app/models/order.rb:39
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT `orders`.* FROM `orders`[0m
+  ↳ app/views/orders/index.html.erb:26
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m  [["product_id", 1]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m  [["product_id", 2]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m  [["product_id", 3]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m  [["product_id", 4]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m  [["product_id", 5]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m  [["product_id", 6]]
+  ↳ app/models/order.rb:39
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 5[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 6[0m
+  ↳ app/views/orders/index.html.erb:7
+  Rendered orders/index.html.erb within layouts/application (48.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:23
+Completed 200 OK in 95ms (Views: 85.4ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/orders" for ::1 at 2019-10-14 11:56:44 +0530
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/orders/index.html.erb:6
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 1[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 2[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 3[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 4[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m
+  ↳ app/models/order.rb:39
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders`[0m
+  ↳ app/views/orders/index.html.erb:26
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m  [["product_id", 1]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m  [["product_id", 2]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m  [["product_id", 3]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m  [["product_id", 4]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.1ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m  [["product_id", 5]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m  [["product_id", 6]]
+  ↳ app/models/order.rb:39
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 5[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 6[0m
+  ↳ app/views/orders/index.html.erb:7
+  Rendered orders/index.html.erb within layouts/application (30.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:23
+Completed 200 OK in 64ms (Views: 58.3ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/orders" for ::1 at 2019-10-14 11:58:35 +0530
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/orders/index.html.erb:6
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 1[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 2[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 3[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 4[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m
+  ↳ app/models/order.rb:39
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT `orders`.* FROM `orders`[0m
+  ↳ app/views/orders/index.html.erb:26
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m  [["product_id", 1]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m  [["product_id", 2]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m  [["product_id", 3]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m  [["product_id", 4]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m  [["product_id", 5]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m  [["product_id", 6]]
+  ↳ app/models/order.rb:39
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 5[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 6[0m
+  ↳ app/views/orders/index.html.erb:7
+  Rendered orders/index.html.erb within layouts/application (26.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:23
+Completed 200 OK in 68ms (Views: 62.5ms | ActiveRecord: 4.7ms)
+
+
+Started DELETE "/orders/84" for ::1 at 2019-10-14 11:58:46 +0530
+Processing by OrdersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"a/V1VyI2YwpJVPXGirhYHGeByd/bpoUBvUrQ0zNDpHtLr3kwhmB2SVCHxWg2kCyEwwC+eugfL1ipuvBkBv8Wcw==", "id"=>"84"}
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 84 LIMIT 1[0m
+  ↳ app/controllers/orders_controller.rb:39
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.8ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m
+  ↳ app/models/order.rb:39
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:25
+  [1m[36mOrder::HABTM_Products Destroy (0.1ms)[0m  [1m[31mDELETE FROM `orders_products` WHERE `orders_products`.`order_id` = 84[0m
+  ↳ app/controllers/orders_controller.rb:25
+  [1m[36mOrder Destroy (0.1ms)[0m  [1m[31mDELETE FROM `orders` WHERE `orders`.`id` = 84[0m
+  ↳ app/controllers/orders_controller.rb:25
+  [1m[35m (58.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:25
+Redirected to http://localhost:3000/orders
+Completed 302 Found in 75ms (ActiveRecord: 62.5ms)
+
+
+Started GET "/orders" for ::1 at 2019-10-14 11:58:46 +0530
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/orders/index.html.erb:6
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 1[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 2[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 3[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 4[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 5[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 6[0m
+  ↳ app/views/orders/index.html.erb:7
+  Rendered orders/index.html.erb within layouts/application (12.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:23
+Completed 200 OK in 51ms (Views: 46.6ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/carts" for ::1 at 2019-10-14 11:59:06 +0530
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/pc-14/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/pc-14/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by CartsController#index as HTML
+  Rendering carts/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/carts/index.html.erb:6
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m
+  ↳ app/views/carts/index.html.erb:7
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m
+  ↳ app/views/carts/index.html.erb:7
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m
+  ↳ app/views/carts/index.html.erb:7
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m
+  ↳ app/views/carts/index.html.erb:7
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m
+  ↳ app/views/carts/index.html.erb:7
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m
+  ↳ app/views/carts/index.html.erb:7
+  Rendered carts/index.html.erb within layouts/application (69.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:23
+Completed 200 OK in 313ms (Views: 266.0ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/orders" for ::1 at 2019-10-14 11:59:08 +0530
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GrVVULmsLHBfr4yywlbe1Fyd27fPpxZBVJzXm5qARUoHrdsZYXaVbFZmE/PFTBhGZ8jUuA5zFxFrgh13Izijww==", "product_id"=>"6", "quantity"=>"2", "commit"=>"Buy"}
+Unpermitted parameters: :utf8, :authenticity_token, :product_id, :quantity, :commit
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.8ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (1.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.8ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m
+  ↳ app/models/order.rb:39
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/orders_controller.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:15
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/orders_controller.rb:15
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:21
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 1[0m
+  ↳ app/models/order.rb:22
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 2[0m
+  ↳ app/models/order.rb:22
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 3[0m
+  ↳ app/models/order.rb:22
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 4[0m
+  ↳ app/models/order.rb:22
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 5[0m
+  ↳ app/models/order.rb:22
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 6[0m
+  ↳ app/models/order.rb:22
+  [1m[36mOrder Create (0.2ms)[0m  [1m[32mINSERT INTO `orders` (`user_id`, `created_at`, `updated_at`) VALUES (2, '2019-10-14 06:29:08', '2019-10-14 06:29:08')[0m
+  ↳ app/controllers/orders_controller.rb:15
+  [1m[35m (35.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:15
+Redirected to http://localhost:3000/orders
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/orders_controller.rb:54
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:55
+  [1m[36mProduct::HABTM_Orders Create (0.3ms)[0m  [1m[32mINSERT INTO `orders_products` (`product_id`, `order_id`) VALUES (6, 90)[0m
+  ↳ app/controllers/orders_controller.rb:55
+  [1m[35m (55.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:55
+Completed 302 Found in 157ms (ActiveRecord: 102.6ms)
+
+
+Started GET "/orders" for ::1 at 2019-10-14 11:59:08 +0530
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/orders/index.html.erb:6
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 1[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 2[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 3[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 4[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 5[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 6[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (2.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (1.1ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.9ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (43.9ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m
+  ↳ app/models/order.rb:39
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders`[0m
+  ↳ app/views/orders/index.html.erb:26
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m  [["product_id", 1]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m  [["product_id", 2]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m  [["product_id", 3]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m  [["product_id", 4]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m  [["product_id", 5]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m  [["product_id", 6]]
+  ↳ app/models/order.rb:39
+  Rendered orders/index.html.erb within layouts/application (85.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:23
+Completed 200 OK in 135ms (Views: 80.3ms | ActiveRecord: 53.4ms)
+
+
+Started GET "/orders" for ::1 at 2019-10-14 12:01:22 +0530
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/orders/index.html.erb:6
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 1[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 2[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 3[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 4[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 5[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 6[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.7ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m
+  ↳ app/models/order.rb:39
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT `orders`.* FROM `orders`[0m
+  ↳ app/views/orders/index.html.erb:26
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m  [["product_id", 1]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m  [["product_id", 2]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m  [["product_id", 3]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m  [["product_id", 4]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m  [["product_id", 5]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m  [["product_id", 6]]
+  ↳ app/models/order.rb:39
+  Rendered orders/index.html.erb within layouts/application (25.8ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:23
+Completed 200 OK in 74ms (Views: 67.2ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/orders" for ::1 at 2019-10-14 12:02:38 +0530
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/orders/index.html.erb:6
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 1[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 2[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 3[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 4[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 5[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 6[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCart Load (0.6ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.6ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m
+  ↳ app/models/order.rb:39
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders`[0m
+  ↳ app/views/orders/index.html.erb:26
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m  [["product_id", 1]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m  [["product_id", 2]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m  [["product_id", 3]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m  [["product_id", 4]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m  [["product_id", 5]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m  [["product_id", 6]]
+  ↳ app/models/order.rb:39
+  Rendered orders/index.html.erb within layouts/application (20.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:23
+Completed 200 OK in 71ms (Views: 65.3ms | ActiveRecord: 4.7ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-10-14 12:03:16 +0530
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"LwI0yKjWMbT5E4PVW/yhFTm0g7hjWph37ZvMJ/jxPvIPWDivDIAk9+DAs3vn1NWNnTX0HVDjMi75a+yQzU2M+g=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/pc-14/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/pc-14/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/pc-14/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-10-14 12:03:16 +0530
+Processing by WelcomesController#index as HTML
+  Rendering welcomes/index.html.erb within layouts/application
+  Rendered welcomes/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 36ms (Views: 35.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-10-14 12:03:17 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.7ms)
+  Rendered users/sessions/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 47ms (Views: 45.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-10-14 12:03:23 +0530
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SefHfQu6y/UJ8C8/Z4lpwDtdi56WYByqKxBtE/lIDqWtClwq3BuNsPHNFLiSCBWAzpUYjwgYjTG83Ct7xROniA==", "user"=>{"email"=>"jhon@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'jhon@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/pc-14/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/products
+Completed 302 Found in 261ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for ::1 at 2019-10-14 12:03:23 +0530
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/products/_products_all.html.erb:4
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/_products_all.html.erb:13
+  Rendered products/_products_all.html.erb (31.0ms)
+  Rendered products/index.html.erb within layouts/application (31.7ms)
+Completed 200 OK in 64ms (Views: 62.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products" for ::1 at 2019-10-14 12:03:25 +0530
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/products/_products_all.html.erb:4
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/_products_all.html.erb:13
+  Rendered products/_products_all.html.erb (14.7ms)
+  Rendered products/index.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 49ms (Views: 47.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/carts" for ::1 at 2019-10-14 12:03:30 +0530
+Processing by CartsController#index as HTML
+  Rendering carts/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/carts/index.html.erb:6
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m
+  ↳ app/views/carts/index.html.erb:7
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m
+  ↳ app/views/carts/index.html.erb:7
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m
+  ↳ app/views/carts/index.html.erb:7
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m
+  ↳ app/views/carts/index.html.erb:7
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m
+  ↳ app/views/carts/index.html.erb:7
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m
+  ↳ app/views/carts/index.html.erb:7
+  Rendered carts/index.html.erb within layouts/application (14.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:23
+Completed 200 OK in 71ms (Views: 67.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/orders" for ::1 at 2019-10-14 12:03:32 +0530
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/orders/index.html.erb:6
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 1[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 2[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 3[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 4[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 5[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 6[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m
+  ↳ app/models/order.rb:39
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT `orders`.* FROM `orders`[0m
+  ↳ app/views/orders/index.html.erb:26
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m  [["product_id", 1]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m  [["product_id", 2]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m  [["product_id", 3]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m  [["product_id", 4]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m  [["product_id", 5]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m  [["product_id", 6]]
+  ↳ app/models/order.rb:39
+  Rendered orders/index.html.erb within layouts/application (31.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:23
+Completed 200 OK in 64ms (Views: 57.6ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/orders" for ::1 at 2019-10-14 12:03:43 +0530
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/orders/index.html.erb:6
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 1[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 2[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 3[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 4[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 5[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` INNER JOIN `orders_products` ON `orders`.`id` = `orders_products`.`order_id` WHERE `orders_products`.`product_id` = 6[0m
+  ↳ app/views/orders/index.html.erb:7
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (1.2ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (0.6ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m
+  ↳ app/models/order.rb:39
+  [1m[36mCart Load (1.3ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m
+  ↳ app/models/order.rb:39
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT `orders`.* FROM `orders`[0m
+  ↳ app/views/orders/index.html.erb:26
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/models/order.rb:38
+  [1m[36mCACHE Cart Load (0.1ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 1[0m  [["product_id", 1]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts`[0m
+  ↳ app/models/order.rb:40
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 2[0m  [["product_id", 2]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 3[0m  [["product_id", 3]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 4[0m  [["product_id", 4]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 5[0m  [["product_id", 5]]
+  ↳ app/models/order.rb:39
+  [1m[36mCACHE Cart Load (0.0ms)[0m  [1m[34mSELECT `carts`.* FROM `carts` INNER JOIN `carts_products` ON `carts`.`id` = `carts_products`.`cart_id` WHERE `carts_products`.`product_id` = 6[0m  [["product_id", 6]]
+  ↳ app/models/order.rb:39
+  Rendered orders/index.html.erb within layouts/application (34.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:23
+Completed 200 OK in 115ms (Views: 106.7ms | ActiveRecord: 7.6ms)
+
+

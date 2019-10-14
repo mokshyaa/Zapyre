@@ -3,33 +3,24 @@
 </div>
 <div class="container">
   <div class="row" >
-		<% @products.each do |product_o|%>
-			<% product_o.orders.each do |order|   %>
-			  <% @products.each do |product| %><br><br>
-				  <%if product_o.id == product.id%>
-					  <div class="col-md-7" style="box-shadow: 8px 8px 5px #aaaaaa;padding-bottom: 10px;"><br>          
-							<%= image_tag product.image.url(:large),height: "500>", width: "500>"  ,class: "rounded mx-auto d-block"%> <br>
-						</div>
-						<div class="col-md-5"><br><br><br><br>		
-							<b> Name :</b> <%= product.name %><br>									 
-							<b> Price :</b> <%= product.price %> ₹ <br>									 
-							<b> Brand :</b> <%= product.brand %><br>					
-							<b> Description :</b> <%= product.description %><br>								
-							<b> Offer :</b> <%= product.offer %><br><br>								
-							<b><%= link_to 'Show',product_path(product), class: 'btn btn-info  btn-lg' %> </b><br><br><br><br><br><br><br><br><br>						
-						  
-						  <b><%= link_to 'Cancle Order', order, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger  btn-lg' %></b>
-					  </div>
-					<%end%>
+   	<%@orders.each do |order|%>
+  		<%if order.user_id == current_user.id %>
+		 	  <% order.products.each do |product| %>
+					<div class="col-md-7" style="box-shadow: 8px 8px 5px #aaaaaa;padding-bottom: 10px;"><br>             
+         		 <%= image_tag product.image.url(:medium),height: "200>", width: "200>"  ,class: "rounded mx-auto d-block"%>
+         	</div>
+         	<div class="col-md-5"><br><br><br><br>
+            <b> Name :</b> <%= product.name %><br>               
+            <b> Price :</b> <%= product.price %> ₹ <br>               
+            <b> Brand :</b> <%= product.brand %><br>          
+            <b> Description :</b> <%= product.description %><br>              
+            <b> Offer :</b> <%= product.offer %><br>              
+            <b><%= link_to 'Show',product_path(product), class: 'btn btn-info  btn-lg' %> </b><br><br><br><br><br><br><br><br><br>						
+						<b><%= link_to 'Cancle Order', order, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger  btn-lg' %></b>
+          </div>	
 			  <%end%>
-		
-			  <%@orders.each do |order_main| %>
-		  		<% if order.id == order_main.id %>
-		  			 <h3><b> Total : <%= order_main.total %> ₹ </b></h3>
-			  <%end%>
-			<%end%>
 		  <%end%>
-		<%end%>
+   	<%end%>	
 	</div>
 </div>
 
