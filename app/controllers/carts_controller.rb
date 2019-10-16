@@ -4,7 +4,7 @@ class CartsController < ApplicationController
   after_action :add_to_carts_products,  only:[:create]
 
 	def index
-		@carts = Cart.all
+		@cart = Cart.where(user_id: current_user.id).includes(:products)
 	end
 
 	def create
@@ -21,7 +21,7 @@ class CartsController < ApplicationController
 		begin
 			@cart.destroy
 				respond_to do |format|
-			  format.html { redirect_to carts_url, notice: 'Product was successfully destroyed.' }
+			  	format.html { redirect_to @cart, notice: 'Product was successfully removed from cart.' }
 				end
 	  rescue StandardError => e
 			print e

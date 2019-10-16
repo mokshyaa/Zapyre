@@ -3,8 +3,8 @@ class WishlistsController < ApplicationController
  before_action :get_wishlist, only: [:destroy]
  after_action :add_to_products_wishlists, only: [:create]
 
-	def index
-		@wishlists = Wishlist.all
+	def index		
+		@wishlist = Wishlist.where(user_id: current_user.id).includes(:products)
 	end
 
 	def create
@@ -21,7 +21,7 @@ class WishlistsController < ApplicationController
 		begin
 			@wishlist.destroy
 			respond_to do |format|
-	    	  format.html { redirect_to wishlists_url, notice: 'Product was successfully destroyed.' }
+	    	  format.html { redirect_to wishlists_url, notice: 'Product was successfully removed from wishlist.' }
 	    	end
     rescue StandardError => e
    	  print e

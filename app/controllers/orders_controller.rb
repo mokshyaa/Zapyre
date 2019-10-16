@@ -4,16 +4,14 @@ class OrdersController < ApplicationController
   before_action :get_order , only: [:destroy]
 
 	def index
-		@orders = Order.all
+		@orders = current_user.orders.includes(:products)
 	end
 		
 	def create
 	  @order = Order.new(order_params)
 	  @order.user_id = current_user.id
 	   	begin
-			  if @order.save		
-			 	  redirect_to orders_url
-			  end 	
+			  if @order.save!
 			rescue StandardError => e
 				print e
 			end 	

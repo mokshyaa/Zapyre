@@ -29,6 +29,8 @@ Devise.setup do |config|
  # }
 
   config.omniauth :google_oauth2, 'GOOGLE_CLIENT_ID', 'GOOGLE_CLIENT_SECRET', {scope: "email"}
+ 
+
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 

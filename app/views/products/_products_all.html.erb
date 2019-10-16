@@ -1,13 +1,11 @@
 <div class="container-fluid" style="background: #fff;">	
 	<div class="container">
 		<div class="row">
-			<% if user_signed_in? %>
-				<% if current_user.admin? %>
-					<div class="col" >
-						<%= image_tag ("add.png") ,width: "30", height: "30" %>
+			<% if current_user && current_user.admin? %>
+				<div class="col" >
+					<%= image_tag ("add.png") ,width: "30", height: "30" %>
 					<b> <%= link_to 'New Product', new_product_path(@product),class: 'btn btn-success  btn-lg' %> </b>	 
-					</div>
-				<%end%>
+				</div>
 			<%end%>
 			<br>
 				<% @products.each do |product| %>
@@ -22,36 +20,18 @@
 								<div class="col-md-3" style="padding-bottom: 5px;"> 
 									<b><%= link_to 'Show',product_path(product) ,class: 'btn btn-info  btn-lg' %> </b><br>
 								</div>
-								<% if user_signed_in? %>
-									<% if current_user.admin? %>
-										<div class="col-md-3" style="padding-bottom: 5px;">
-											<b><%= link_to 'Edit', edit_product_path(product), class: 'btn btn-primary  btn-lg'%> </b>
-										</div>
-										<div class="col-md-3" style="padding-bottom: 5px;">							
-											<b><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger  btn-lg	' %></b><br>
-										</div>									
-									<%end%>
+								<% if current_user && current_user.admin? %>
+									<div class="col-md-3" style="padding-bottom: 5px;">
+										<b><%= link_to 'Edit', edit_product_path(product), class: 'btn btn-primary  btn-lg'%> </b>
+									</div>
+									<div class="col-md-3" style="padding-bottom: 5px;">							
+										<b><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger  btn-lg	' %></b><br>
+									</div>									
 								<%end%>
 							</div>
-								<% if user_signed_in? %>
-									<% unless current_user.admin? %>								  					
-										<%= form_with(url: carts_path(cart: @cart), method: "post", local: true) do |form| %>
-											<p><%= form.hidden_field :product_id, value: product.id  %></p>
-											<p>
-												<%= form.label :quantity %><br>
-												<%= form.number_field :quantity %>
-											</p><br>
-											<div class="row">
-												<div class="col-md-6">
-													<p><%= form.submit 'Add to Cart', class: 'btn btn-success '%></p>
-										<% end %>										
-											<%= form_with(url: wishlists_path(wishlist: @wishlist), method: "post", local: true) do |form| %>
-												<p><%= form.hidden_field :product_id, value: product.id  %></p>
-												<p><%= form.submit 'Wishlist',class: 'btn btn-primary '%></p>
-											<% end %>
-												</div>	
-											</div>								
-									<%end%>
+								<% if current_user && !current_user.admin? %>
+									<%= render partial: "form_cart", locals: {product_id: product.id} %>
+									<%= render partial: "form_wishlist", locals: {product_id: product.id} %>				
 								<%end%>					
 					</div>			   
 				<%end%>
