@@ -2,24 +2,24 @@
   <h1><strong>Cart</strong></h1><br>  
 </div>
 <div class="container">
-  <div class="row">
+  <div class="row", style="box-shadow: 8px 8px 5px #aaaaaa;">
     <%@cart.each do |c|%>    
       <% c.products.each do |product|%>
-        <div class="col-md-4" style="box-shadow: 8px 8px 5px #aaaaaa;"><br>          
+        <div class="col-md-4" ><br>          
           <%= image_tag product.image.url(:medium),height: "200>", width: "200>"  ,class: "rounded mx-auto d-block"%> <br> <b> Name :</b> <%= product.name %><br>               
           <b> Price :</b> <%= product.price %> ₹ <br>               
           <b> Brand :</b> <%= product.brand %><br>          
           <b> Description :</b> <%= product.description %><br>              
           <b> Offer :</b> <%= product.offer %><br>
           <b> Quantity :</b> <%= c.quantity %><br>               
-          <b><%= link_to 'Show',product_path(product),class: 'btn btn-info  ' %> </b><br>              
-          <%= render partial: "orders/form_order", locals: {product_id: product.id, c_quantity: c.quantity} %>
+          <b><%= link_to 'Show',product_path(product),class: 'btn btn-info  ' %> </b><br>             
           <b><%= link_to 'Remove',c, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></b>
         </div>
       <% end %>
-    <% end %>   
+    <% end %>  
   </div>
 </div>
+<%= render partial: "orders/form_order"%> 
 
 
 
