@@ -1,0 +1,51 @@
+<div class="container-fluid" style="background: grey;">
+  <h1><strong>Orders</strong></h1><br>
+</div>
+<div class="container">
+  <div class="row", style="box-shadow: 8px 8px 5px #aaaaaa;">
+    <% o_ids = [] %> 
+    <% order_total = 0 %> 
+    <%@orders.each do |o|%>
+      <% o.products.each do |product|%>
+        <div class="col-md-4" ><br>          
+          <%= image_tag product.image.url(:medium),height: "200>", width: "200>"  ,class: "rounded mx-auto d-block"%> <br> <b> Name :</b> <%= product.name %><br>               
+          <b> Price :</b> <%= product.price %> ₹ <br>               
+          <b> Brand :</b> <%= product.brand %><br>          
+          <b> Description :</b> <%= product.description %><br>              
+          <b> Offer :</b> <%= product.offer %><br>
+          <b> Quantity :</b> <%= o.quantity %><br>
+          <h3><b> Product Total : <%= product.price * o.quantity %>₹ </b><br></h3>
+          <% order_total += product.price * o.quantity %>
+          <% o_ids << o.id%>              
+          <b><%= link_to 'Show',product_path(product),class: 'btn btn-info  ' %> </b><br>             
+          <b><%= link_to 'Remove',o, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></b>
+        </div>
+      <% end %>
+    <% end %>  
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+     <div class="col"><br>
+      <%cookies[:ids] = o_ids %>
+      <h3><b> Order Total : <%= order_total %>₹ </b><br><h3> 
+      <b><%= link_to "Cancle Order", { action: "destroy", id: o_ids },method: :delete, data: { confirm: "Are you sure?"},class: 'btn btn-danger  btn-lg'%></b>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

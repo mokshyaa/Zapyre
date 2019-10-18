@@ -1,0 +1,19 @@
+<%= form_with(url: orders_path(order: @order), method: "post", local: true) do |form| %>
+<%  p_ids = [] %>
+<% 	multiple_quantity = [] %>
+	<% @cart.each do |c|%>
+		<% multiple_quantity << c.quantity %>
+		<% c.products.each do |pid|%>
+			<%p_ids << pid.id%>
+		<% end %>
+	<% end %>
+	<p><%= form.hidden_field :product_id ,value: p_ids%></p>
+	<p><%= form.hidden_field :quantity ,value: multiple_quantity%></p>
+	<div class="container">
+		<div class="row" >
+			<div class="col md-6">
+  			<p><%= form.submit 'Proceed to Order',class: 'btn btn-success btn-lg', data: { "disable-with": "Ordering..." }%></p>
+ 			 </div>
+  	</div>
+	</div>
+<% end %>
