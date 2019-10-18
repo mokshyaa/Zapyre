@@ -38,9 +38,7 @@ class WishlistsController < ApplicationController
   #add record to join tables
   def add_to_products_wishlists
   	begin
-		  @product = Product.find(params[:product_id])
-		  @product.wishlists << @wishlist
-		  flash[:notice] = 'Product was saved.'
+		  Product.find(params[:product_id]).wishlists << @wishlist
 	  rescue StandardError => e
    	  print e
     end

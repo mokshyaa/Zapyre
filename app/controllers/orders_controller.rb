@@ -14,15 +14,20 @@ class OrdersController < ApplicationController
 			@order = Order.new(order_params)
 			@order.quantity = qnt
 			@order.user_id = current_user.id
-		  @cart = Cart.where(quantity: qnt, user_id: current_user).includes(:products)
-      @cart.first.destroy		
-      @order.save 
+			@cart = Cart.where(quantity: qnt, user_id: current_user).includes(:products)
+			if !@cart.first.nil?
+				@order.save
+				#delete product from cart if you order them.
+	      @cart.first.destroy
+	    end     
 	  end	
 	end
 	
 	def destroy
 		begin
-			cookies[:key].split("&").each do |dlt|
+			#delete multiple products from order 
+			params[:id].split("/").each do |dlt|
+				byebug
    		  current_user.orders.where(id:dlt).first.destroy
 	    end	 	
 		rescue StandardError => e
@@ -49,30 +54,27 @@ class OrdersController < ApplicationController
 		begin 	
 		count = 0		
 			current_user.orders.all.each do |order|
-					next if order.products.exists?
-						@product = Product.find((params[:product_id].split)[count])
-						@product.orders << order
-						count+=1
+				next if order.products.exists?
+				@product = Product.find((params[:product_id].split)[count])
+				@product.orders << order
+				count+=1
 			end		
 	  rescue StandardError => e
    	  print e
     end
 	end
 
-	#If same product is in order then update the quantity value
+	#If same product is in order then update the quantity of that product and won't create another.
   def check_for_similar_products
-   	@order_current = current_user.orders
-   		@order_current.each do |p|
-	   		p.products.each do |pid| 
-	   			if params[:product_id].to_i ==  pid.id
-	   				p.quantity += params[:quantity].to_i
-		   			p.save
-		   			@cart = Cart.where(quantity: params[:quantity], user_id: current_user).includes(:products)
-      			@cart.first.destroy		 
-		   			redirect_to carts_path
-		   		end
-	   		end
-   	end
+  	byebug
+		@order_current = current_user.orders.includes(:products).where('products.id=  ?',params[:product_id]).references(:products)
+		@cart_current = Cart.where(quantity: params[:quantity], user_id: current_user)
+		if !@order_current.first.nil? 
+		 	@order_current.first.quantity += params[:quantity].to_i
+			@order_current.first.save
+	    @cart_current.first.destroy
+	    redirect_to orders_path		 
+		end
   end
 
 end
