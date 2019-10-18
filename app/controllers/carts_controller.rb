@@ -8,13 +8,14 @@ class CartsController < ApplicationController
 	end
 
 	def create
+		byebug
 		@cart = Cart.new(cart_params)
 		@cart.user_id = current_user.id
 		begin
 			@cart.save		 	
 		rescue StandardError => e
 			print e
-		end 	
+		end 
 	end
 	
 	def destroy
@@ -47,6 +48,7 @@ class CartsController < ApplicationController
 		  flash[:notice] = 'Product was saved.'
 		rescue StandardError => e
    	  print e
+   	  
     end
   end
 end
