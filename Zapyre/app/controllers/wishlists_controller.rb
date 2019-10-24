@@ -46,4 +46,5 @@ class WishlistsController < ApplicationController
    	  print e
     end
 	end
+	
 end

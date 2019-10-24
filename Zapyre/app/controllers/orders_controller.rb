@@ -47,6 +47,7 @@ class OrdersController < ApplicationController
 		current_user.cart.products.each do |cart_product|
 			cart_product.orders << current_user.orders.first	if !cart_product.nil?
 			if cart_product.orders
+					#change qnt_type in quantities table from 'Cart' to 'Order'
 					@quantity = cart_product.quantities.where(qnt_id: current_user.cart.id).first
 	 				@quantity.qnt_type.sub!(/Cart/, 'Order')
 	 				@quantity.qnt_id = current_user.orders.first.id
