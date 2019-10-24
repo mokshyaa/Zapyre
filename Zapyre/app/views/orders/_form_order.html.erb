@@ -1,0 +1,10 @@
+<%= form_with(url: orders_path(order: @order), method: "post", local: true) do |form| %>
+
+	<div class="container">
+		<div class="row" >
+			<div class="col md-6">
+  			<p><%= form.submit 'Proceed to Order',class: 'btn btn-success btn-lg', data: { "disable-with": "Ordering..." }%></p>
+ 			 </div>
+  	</div>
+	</div>
+<% end %>

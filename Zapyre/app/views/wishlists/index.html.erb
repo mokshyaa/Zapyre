@@ -1,0 +1,34 @@
+<div class="container-fluid" style="background: grey;">
+  <h1><strong>Wishlist</strong></h1><br>
+</div>
+<div class="container">
+  <div class="row">
+ 		<%if !current_user.wishlist.nil?%>
+			<% current_user.wishlist.products.each do |product| %>
+			 	<div class="col-md-4" style="box-shadow: 8px 8px 5px #aaaaaa;">          
+		      <%= image_tag product.image.url(:medium),height: "200>", width: "200>"  ,class: "rounded mx-auto d-block"%> <br>
+		      <b> Name :</b> <%= product.name %><br>
+		      <b> Price :</b> <%= product.price %> ₹ <br>
+		      <b> Brand :</b> <%= product.brand %><br>
+		      <b> Description :</b> <%= product.description %><br>
+		      <b> Offer :</b> <%= product.offer %><br>
+		      <b><%= link_to 'Show',product_path(product),class: 'btn btn-info  ' %> </b><br>
+		        <% if current_user && !current_user.admin? %>										  					
+							<%= render partial: "products/form_cart", locals: {product_id: product.id} %>
+							<b><%= link_to 'Remove',  method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></b>
+						<% end %>
+				</div>
+			<% end %>
+		<% end %>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+

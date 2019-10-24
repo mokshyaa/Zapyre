@@ -1,0 +1,11 @@
+	<%= form_with(model: @quantity , method: "post", local: true) do |form| %>
+	<p>
+	  <%= form.label :quantity %><br>
+	  <%= form.number_field :quantity %>
+	</p><br>
+	<div class="row">
+		<div class="col-md-6">
+			<p><%= form.submit 'Add to Cart', class: 'btn btn-success'%></p>
+		</div>
+	</div>
+<% end %>
