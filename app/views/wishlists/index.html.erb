@@ -1,6 +1,7 @@
 <div class="container-fluid" style="background: grey;">
   <h1><strong>Wishlist</strong></h1><br>
 </div> 
+<p id="notice"><%= notice %></p>
 <div class="container">
   <div class="row">
  		<%if !current_user.wishlist.nil?%>
@@ -15,7 +16,7 @@
 		      <b><%= link_to 'Show',product_path(product),class: 'btn btn-info  ' %> </b><br>
 		        <% if current_user && !current_user.admin? %>										  					
 							<%= render partial: "products/form_cart", locals: {product_id: product.id} %>
-							<b><%= link_to 'Remove',  method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></b>
+							<b><%= link_to 'Remove',current_user.wishlist, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></b>
 						<% end %>
 				</div>
 			<% end %>

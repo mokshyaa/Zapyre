@@ -1,56 +1,31 @@
 <div class="container-fluid" style="background: grey;">
   <h1><strong>Orders</strong></h1><br>
 </div>
+<p id="notice"><%= notice %></p>
 <div class="container">
-  <div class="row", style="box-shadow: 8px 8px 5px #aaaaaa;">
-    <% o_ids = [] %> 
-    <% order_total = 0 %> 
+  <% order_total = 0 %> 
     <% if !current_user.orders.nil? %>
       <% current_user.orders.each do |order|%>
-        <% order.products.each do |product|%>
-          <div class="col-md-4" ><br> 
-          <% @current_quantity = order.quantity.find_by(product_id: product.id).quantity %>         
-            <%= image_tag product.image.url(:medium),height: "200>", width: "200>"  ,class: "rounded mx-auto d-block"%> <br> <b> Name :</b> <%= product.name %><br>               
-            <b> Price :</b> <%= product.price %> ₹ <br>               
-            <b> Brand :</b> <%= product.brand %><br>          
-            <b> Description :</b> <%= product.description %><br>              
-            <b> Offer :</b> <%= product.offer %><br>
-            <b> Quantity :</b> <%= @current_quantity %><br>
-            <h3><b> Product Total : <%= product.price * @current_quantity %>₹ </b><br></h3>
-            <% order_total += product.price * @current_quantity%>
-            <b><%= link_to 'Show',product_path(product),class: 'btn btn-info  ' %> </b><br>             
-          </div>
-        <% end %>
-        <%order.total = order_total%>
-        <%order.save%>
+        <div class="row">
+          <% order.products.each do |product|%>
+            <div class="col-md-4", style="box-shadow: 8px 8px 5px #aaaaaa;"><br> 
+            <% @current_quantity = order.quantity.find_by(product_id: product.id).quantity %>         
+              <%= image_tag product.image.url(:medium),height: "200>", width: "200>"  ,class: "rounded mx-auto d-block"%> <br> <b> Name :</b> <%= product.name %><br>               
+              <b> Price :</b> <%= product.price %> ₹ <br>               
+              <b> Brand :</b> <%= product.brand %><br>          
+              <b> Description :</b> <%= product.description %><br>              
+              <b> Offer :</b> <%= product.offer %><br>
+              <b> Quantity :</b> <%= @current_quantity %><br>
+              <h3><b> Product Total : <%= product.price * @current_quantity %>₹ </b><br></h3>
+              <% order_total += product.price * @current_quantity%>
+              <b><%= link_to 'Show',product_path(product),class: 'btn btn-info  ' %> </b><br>             
+            </div>
+          <% end %>
+          <%order.total = order_total%>
+          <%order.save%>
+        </div>
+        <h3><b> Order <%="#{order.id}"%> Total : <%= order_total %>₹ </b><br></h3>
+        <b><%= link_to "Cancle Order",order,method: :delete, data: { confirm: "Are you sure?"},class: 'btn btn-danger  btn-lg'%></b>
       <% end %>
     <% end %>  
-  </div>
 </div>
-<div class="container">
-  <div class="row">
-     <div class="col"><br>  
-      <% if !current_user.orders.first.nil? %>
-        <h3><b> Order Total : <%= order_total %>₹ </b><br><h3>
-        <b><%= link_to "Buy", buys_index_path,  data: { confirm: "Are you sure to Buy and Pay #{order_total}₹ ?"},class: 'btn btn-success  btn-lg'%></b>
-        <b><%= link_to "Cancle Order", { action: "destroy" , id: current_user.orders.first.id},method: :delete, data: { confirm: "Are you sure?"},class: 'btn btn-danger  btn-lg'%></b>
-      <% end %>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

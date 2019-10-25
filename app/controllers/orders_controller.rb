@@ -10,16 +10,14 @@ class OrdersController < ApplicationController
 	end
 		
 	def create
-		if current_user.orders.first.nil?
 			@order = Order.new(order_params)
 			@order.user_id = current_user.id
 			@order.save
-	  end   
 	end
 	
 	def destroy
 		begin
-   	  current_user.orders.first.destroy
+   	  @order.destroy
    	  redirect_to orders_path
    	rescue StandardError => e
    	  print e
@@ -45,12 +43,12 @@ class OrdersController < ApplicationController
 		begin
 		current_user.orders.reload 	
 		current_user.cart.products.each do |cart_product|
-			cart_product.orders << current_user.orders.first	if !cart_product.nil?
+			cart_product.orders << @order	if !cart_product.nil?
 			if cart_product.orders
 					#change qnt_type in quantities table from 'Cart' to 'Order'
 					@quantity = cart_product.quantities.where(qnt_id: current_user.cart.id).first
 	 				@quantity.qnt_type.sub!(/Cart/, 'Order')
-	 				@quantity.qnt_id = current_user.orders.first.id
+	 				@quantity.qnt_id = @order.id
 	 				@quantity.save
 				end
 			end	
