@@ -5,31 +5,36 @@
   <div class="row", style="box-shadow: 8px 8px 5px #aaaaaa;">
     <% o_ids = [] %> 
     <% order_total = 0 %> 
-    <%@orders.each do |o|%>
-      <% o.products.each do |product|%>
-        <div class="col-md-4" ><br>          
-          <%= image_tag product.image.url(:medium),height: "200>", width: "200>"  ,class: "rounded mx-auto d-block"%> <br> <b> Name :</b> <%= product.name %><br>               
-          <b> Price :</b> <%= product.price %> ₹ <br>               
-          <b> Brand :</b> <%= product.brand %><br>          
-          <b> Description :</b> <%= product.description %><br>              
-          <b> Offer :</b> <%= product.offer %><br>
-          <b> Quantity :</b> <%= o.quantity %><br>
-          <h3><b> Product Total : <%= product.price * o.quantity %>₹ </b><br></h3>
-          <% order_total += product.price * o.quantity %>
-          <% o_ids << o.id%>              
-          <b><%= link_to 'Show',product_path(product),class: 'btn btn-info  ' %> </b><br>             
-          <b><%= link_to 'Remove',o, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></b>
-        </div>
+    <% if !current_user.orders.nil? %>
+      <% current_user.orders.each do |order|%>
+        <% order.products.each do |product|%>
+          <div class="col-md-4" ><br> 
+          <% @current_quantity = order.quantity.find_by(product_id: product.id).quantity %>         
+            <%= image_tag product.image.url(:medium),height: "200>", width: "200>"  ,class: "rounded mx-auto d-block"%> <br> <b> Name :</b> <%= product.name %><br>               
+            <b> Price :</b> <%= product.price %> ₹ <br>               
+            <b> Brand :</b> <%= product.brand %><br>          
+            <b> Description :</b> <%= product.description %><br>              
+            <b> Offer :</b> <%= product.offer %><br>
+            <b> Quantity :</b> <%= @current_quantity %><br>
+            <h3><b> Product Total : <%= product.price * @current_quantity %>₹ </b><br></h3>
+            <% order_total += product.price * @current_quantity%>
+            <b><%= link_to 'Show',product_path(product),class: 'btn btn-info  ' %> </b><br>             
+          </div>
+        <% end %>
+        <%order.total = order_total%>
+        <%order.save%>
       <% end %>
     <% end %>  
   </div>
 </div>
 <div class="container">
   <div class="row">
-     <div class="col"><br>
-      <%cookies[:ids] = o_ids %>
-      <h3><b> Order Total : <%= order_total %>₹ </b><br><h3> 
-      <b><%= link_to "Cancle Order", { action: "destroy", id: o_ids },method: :delete, data: { confirm: "Are you sure?"},class: 'btn btn-danger  btn-lg'%></b>
+     <div class="col"><br>  
+      <% if !current_user.orders.first.nil? %>
+        <h3><b> Order Total : <%= order_total %>₹ </b><br><h3>
+        <b><%= link_to "Buy", buys_index_path,  data: { confirm: "Are you sure to Buy and Pay #{order_total}₹ ?"},class: 'btn btn-success  btn-lg'%></b>
+        <b><%= link_to "Cancle Order", { action: "destroy" , id: current_user.orders.first.id},method: :delete, data: { confirm: "Are you sure?"},class: 'btn btn-danger  btn-lg'%></b>
+      <% end %>
     </div>
   </div>
 </div>

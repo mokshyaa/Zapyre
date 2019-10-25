@@ -3,34 +3,21 @@
 </div>
 <div class="container">
   <div class="row", style="box-shadow: 8px 8px 5px #aaaaaa;">
-    <%@cart.each do |c|%>    
-      <% c.products.each do |product|%>
+    <% if !current_user.cart.nil? %>
+      <% current_user.cart.products.each do |product|%>
         <div class="col-md-4" ><br>          
           <%= image_tag product.image.url(:medium),height: "200>", width: "200>"  ,class: "rounded mx-auto d-block"%> <br> <b> Name :</b> <%= product.name %><br>               
           <b> Price :</b> <%= product.price %> ₹ <br>               
           <b> Brand :</b> <%= product.brand %><br>          
           <b> Description :</b> <%= product.description %><br>              
           <b> Offer :</b> <%= product.offer %><br>
-          <b> Quantity :</b> <%= c.quantity %><br>               
+          <b> Quantity :</b> <%= current_user.cart.quantity.find_by(product_id: product.id).quantity %><br>           
           <b><%= link_to 'Show',product_path(product),class: 'btn btn-info  ' %> </b><br>             
-          <b><%= link_to 'Remove',c, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></b>
         </div>
       <% end %>
     <% end %>  
   </div>
 </div>
-<%= render partial: "orders/form_order"%> 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<% if !current_user.cart.nil? %>
+  <%= render partial: "orders/form_order"%> 
+<% end %>

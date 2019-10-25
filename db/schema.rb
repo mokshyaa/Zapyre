@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_09_132454) do
+ActiveRecord::Schema.define(version: 2019_10_22_050009) do
 
   create_table "carts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "quantity"
     t.index ["user_id"], name: "index_carts_on_user_id"
   end
 
@@ -30,7 +29,6 @@ ActiveRecord::Schema.define(version: 2019_10_09_132454) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "total"
-    t.integer "quantity"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -56,6 +54,17 @@ ActiveRecord::Schema.define(version: 2019_10_09_132454) do
   create_table "products_wishlists", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "product_id", null: false
     t.bigint "wishlist_id", null: false
+  end
+
+  create_table "quantities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "quantity"
+    t.bigint "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "qnt_type"
+    t.bigint "qnt_id"
+    t.index ["product_id"], name: "index_quantities_on_product_id"
+    t.index ["qnt_type", "qnt_id"], name: "index_quantities_on_qnt_type_and_qnt_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -87,5 +96,6 @@ ActiveRecord::Schema.define(version: 2019_10_09_132454) do
 
   add_foreign_key "carts", "users"
   add_foreign_key "orders", "users"
+  add_foreign_key "quantities", "products"
   add_foreign_key "wishlists", "users"
 end

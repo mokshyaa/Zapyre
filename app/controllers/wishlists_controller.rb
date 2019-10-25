@@ -8,13 +8,15 @@ class WishlistsController < ApplicationController
 	end
 
 	def create
-		@wishlist = Wishlist.new
-		@wishlist.user_id = current_user.id
-		begin
-			@wishlist.save		 	
-		rescue StandardError => e
-			print e
-		end 	
+		if current_user.wishlist.nil? 
+			@wishlist = Wishlist.new
+			@wishlist.user_id = current_user.id
+			begin
+				@wishlist.save		 	
+			rescue StandardError => e
+				print e
+			end 	
+		end
 	end
 	
 	def destroy
@@ -38,9 +40,11 @@ class WishlistsController < ApplicationController
   #add record to join tables
   def add_to_products_wishlists
   	begin
-		  Product.find(params[:product_id]).wishlists << @wishlist
+  		current_user.reload_wishlist
+		  Product.find(params[:product_id]).wishlists << current_user.wishlist
 	  rescue StandardError => e
    	  print e
     end
 	end
+	
 end
