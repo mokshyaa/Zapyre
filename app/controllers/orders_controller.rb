@@ -1,7 +1,6 @@
 class OrdersController < ApplicationController
 
   before_action :get_order , only: [:destroy]
-  before_action :check_for_similar_products, only: [:create]
   skip_before_action :verify_authenticity_token
   after_action :add_to_orders_products , only: [:create]
 
@@ -57,17 +56,5 @@ class OrdersController < ApplicationController
    	  print e
     end
 	end
-
-	#If same product is in order then update the quantity of that product and won't create another.
-  def check_for_similar_products
-		if !current_user.orders.first.nil? 	&& !current_user.cart.nil? && !current_user.cart.quantity.each {|p| return true if p.product_id == (current_user.orders.each {|o| true if o.quantity.first.quantity }) }.nil?
-			current_user.cart.products.each do|cart_product|
-				current_user.orders.each do|order|
-					order.quantity.find_by(product_id: cart_product.id).increment(:quantity ,current_user.cart.quantity.find_by(product_id: cart_product.id).quantity).save if !order.quantity.find_by(product_id: cart_product.id).nil?
-				end
-			end
-			redirect_to orders_path	if current_user.cart.products.each {|p| current_user.cart.quantity.find_by(product_id: p.id).destroy } && current_user.cart.destroy	
-		end 			
-  end
-
+	
 end
