@@ -12,7 +12,7 @@
           <b> Brand :</b> <%= product.brand %><br>          
           <b> Description :</b> <%= product.description %><br>              
           <b> Offer :</b> <%= product.offer %><br>
-          <b> Quantity :</b> <%= current_user.cart.quantity.find_by(product_id: product.id).quantity %><br>           
+          <b> Quantity :</b> <%= current_user.cart.quantities.find_by(product_id: product.id).quantity %><br>           
           <b><%= link_to 'Show',product_path(product),class: 'btn btn-info  ' %> </b><br>             
         </div>
       <% end %>

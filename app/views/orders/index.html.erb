@@ -9,7 +9,7 @@
         <div class="row">
           <% order.products.each do |product|%>
             <div class="col-md-4", style="box-shadow: 8px 8px 5px #aaaaaa;"><br> 
-            <% @current_quantity = order.quantity.find_by(product_id: product.id).quantity %>         
+            <% @current_quantity = order.quantities.find_by(product_id: product.id).quantity %>         
               <%= image_tag product.image.url(:medium),height: "200>", width: "200>"  ,class: "rounded mx-auto d-block"%> <br> <b> Name :</b> <%= product.name %><br>               
               <b> Price :</b> <%= product.price %> ₹ <br>               
               <b> Brand :</b> <%= product.brand %><br>          
