@@ -1,4 +1,5 @@
 class CartsController < ApplicationController
+	include CartsHelper
 	
   before_action :get_cart, only: [:destroy]
   before_action :check_for_similar_products, only: [:create]
@@ -14,19 +15,32 @@ class CartsController < ApplicationController
 		if current_user.cart.nil? 
 		  @cart = Cart.new
 			@cart.user_id = current_user.id
-			@cart.save 
+			if @cart.save
+			 flash[:success] = "Added To Cart"
+			else	
+				flash[:error] = "Something goes wrong!"
+			end
 		end
 	end
 
 	def destroy
-		begin
-			@cart.destroy
-				respond_to do |format|
-			  	format.html { redirect_to @cart, notice: 'Product was successfully removed from cart.' }
-				end
-	  rescue StandardError => e
-			print e
-		end 			
+		if @cart.destroy
+			respond_to do |format|
+		  	format.html { redirect_to @cart, notice: 'Cart reset successfully.' }
+			end
+		else
+			flash[:error] = "Something goes wrong!"
+		end
+	end
+	
+	def delete_product_from_cart
+		product = current_user.cart.products.where(id: params[:id].to_i).first
+	 	if current_user.cart.products.delete(product)
+	 		flash[:success] = "Product removed"
+	 		redirect_to carts_path
+	 	else
+	 		flash[:error] = "Something goes wrong!"
+	 	end
 	end
 	
 	private 
@@ -43,10 +57,11 @@ class CartsController < ApplicationController
 	#add record to join tables
 	def add_to_carts_products
 		begin
+			wishlist = current_user.wishlist
 			current_user.reload_cart
 		  (Product.find(params[:product_id]).carts << current_user.cart) if params[:quantity].to_i > 0
 		  #delete product from wishlist if you trying to add same product in the cart.
-		  current_user.wishlist.delete if !current_user.wishlist.nil? && current_user.wishlist.products.where(id: params[:product_id].to_i)
+			wishlist.delete if !wishlist.nil? && wishlist.products.where(id: params[:product_id].to_i)
 	  rescue StandardError => e
   	  print e
     end
@@ -56,10 +71,10 @@ class CartsController < ApplicationController
 	def add_to_quantities
 		current_user.reload_cart
   	begin
- 			@quantity = Quantity.new(q_params)
- 			@quantity.qnt_type = 'Cart'
- 			@quantity.qnt_id = current_user.cart.id
- 			@quantity.save
+ 			quantity = Quantity.new(q_params)
+ 			quantity.qnt_type = 'Cart'
+ 			quantity.qnt_id = current_user.cart.id
+ 			quantity.save
 	  rescue StandardError => e
 			print e
 		end 
@@ -67,12 +82,14 @@ class CartsController < ApplicationController
 
   #If same product is in cart then update the quantity value
   def check_for_similar_products
-  	if !current_user.cart.nil?
-  		current_user.cart.products.each do |product|
+  	cart = current_user.cart
+  	wishlist = current_user.wishlist
+  	if !cart.nil?
+  		cart.products.each do |product|
   			if product.id == params[:product_id].to_i
   				#delete product from wishlist if same product is in cart and you trying to add same product in the cart.
-  				current_user.wishlist.delete if !current_user.wishlist.nil? && current_user.wishlist.products.where(id: params[:product_id].to_i)
-					 redirect_to carts_path if product.quantities.where(qnt_type: 'Cart', qnt_id: current_user.cart.id).first.increment(:quantity, params[:quantity].to_i).save
+  				wishlist.delete if !wishlist.nil? && wishlist.products.where(id: params[:product_id].to_i)
+					 redirect_to carts_path if product.quantities.where(qnt_type: 'Cart', qnt_id: cart.id).first.increment(:quantity, params[:quantity].to_i).save
 	 			end
 	 		end	
 	 	end

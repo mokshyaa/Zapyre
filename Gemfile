@@ -51,6 +51,9 @@ gem 'google-api-client'
 #byebug
 gem 'byebug'
 
+#ER Diagram
+gem 'rails-erd', group: :development
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

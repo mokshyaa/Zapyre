@@ -11,7 +11,12 @@ class OrdersController < ApplicationController
 	def create
 			@order = Order.new(order_params)
 			@order.user_id = current_user.id
-			@order.save
+			if @order.save
+			 flash[:success] = "Order successfully created"
+			 redirect_to @order
+			else	
+				redirect_to carts_path
+			end
 	end
 	
 	def destroy

@@ -4,18 +4,18 @@ class WishlistsController < ApplicationController
  after_action :add_to_products_wishlists, only: [:create]
 
 	def index		
-		@wishlist = Wishlist.where(user_id: current_user.id).includes(:products)
+		@wishlist = current_user.wishlist
 	end
 
 	def create
 		if current_user.wishlist.nil? 
 			@wishlist = Wishlist.new
 			@wishlist.user_id = current_user.id
-			begin
-				@wishlist.save		 	
-			rescue StandardError => e
-				print e
-			end 	
+			if @wishlist.save
+			 flash[:success] = "Added To Wishlist"
+			else	
+				flash[:error] = "Something goes wrong!"
+			end
 		end
 	end
 	
@@ -29,6 +29,16 @@ class WishlistsController < ApplicationController
    	  print e
     end
   end
+
+  def delete_product_from_wishlist
+  	product = current_user.wishlist.products.where(id: params[:id].to_i).first
+   	if current_user.wishlist.products.delete(product)
+   		flash[:success] = "Product removed"
+   		redirect_to wishlists_path
+   	else
+   		flash[:error] = "Something goes wrong!"
+   	end
+  end
 	
 	private 
 
@@ -37,11 +47,12 @@ class WishlistsController < ApplicationController
    	@wishlist = Wishlist.find(params[:id])
   end
   
-  #add record to join tables
+  #add record to join tables uniquely
   def add_to_products_wishlists
   	begin
   		current_user.reload_wishlist
-		  Product.find(params[:product_id]).wishlists << current_user.wishlist
+  		byebug
+		  Product.find(params[:product_id]).wishlists << current_user.wishlist if current_user.wishlist.products.where( id: params[:product_id]).first.nil?
 	  rescue StandardError => e
    	  print e
     end

@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_22_050009) do
+ActiveRecord::Schema.define(version: 2019_10_24_125540) do
+
+  create_table "buys", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_buys_on_product_id"
+  end
 
   create_table "carts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -94,6 +101,7 @@ ActiveRecord::Schema.define(version: 2019_10_22_050009) do
     t.index ["user_id"], name: "index_wishlists_on_user_id"
   end
 
+  add_foreign_key "buys", "products"
   add_foreign_key "carts", "users"
   add_foreign_key "orders", "users"
   add_foreign_key "quantities", "products"

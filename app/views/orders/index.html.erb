@@ -25,7 +25,7 @@
           <%order.save%>
         </div>
         <h3><b> Order <%="#{order.id}"%> Total : <%= order_total %>₹ </b><br></h3>
-        <b><%= link_to "Cancle Order",order,method: :delete, data: { confirm: "Are you sure?"},class: 'btn btn-danger  btn-lg'%></b>
+        <b><%= link_to "Cancel Order",order,method: :delete, data: { confirm: "Are you sure?"},class: 'btn btn-danger  btn-lg'%></b>
       <% end %>
     <% end %>  
 </div>
