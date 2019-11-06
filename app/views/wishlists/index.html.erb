@@ -2,6 +2,9 @@
   <h1><strong>Wishlist</strong></h1><br>
 </div> 
 <p id="notice"><%= notice %></p>
+<% flash.each do |key, value| %>
+  <%= content_tag :div, value, class: "flash #{key}" %>
+<% end %>
 <div class="container">
   <div class="row">
  		<%if !@wishlist.nil?%>
@@ -16,7 +19,7 @@
 		      <b><%= link_to 'Show',product_path(product),class: 'btn btn-info  ' %> </b><br>
 		        <% if current_user && !current_user.admin? %>										  					
 							<%= render partial: "products/form_cart", locals: {product_id: product.id} %>
-							<b><%= link_to 'Remove', {controller: :wishlists, action: :delete_product_from_wishlist, id: product.id},  class: 'btn btn-danger' %> </b><br> 
+							<b><%= link_to 'Remove', {controller: :wishlists, action: :remove_product_from_wishlist, id: product.id},  class: 'btn btn-danger' %> </b><br> 
 						<% end %>
 				</div>
 			<% end %>

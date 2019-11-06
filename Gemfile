@@ -29,11 +29,17 @@ gem 'jbuilder', '~> 2.5'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
+#I18N
+gem 'i18n'
+
+#draper
+gem 'draper'
 
 gem "figaro"
-#devise
 
+#devise
 gem 'devise'
+
 #bootstrap
 gem 'bootstrap-sass'
 gem 'jquery-rails'

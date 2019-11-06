@@ -3,12 +3,12 @@ Rails.application.routes.draw do
    resources :products,:orders,:quantities
    resources  :carts do
 	   collection do
-	    get 'delete_product_from_cart'
+	    get 'remove_product_from_cart'
 	   end
 	 end
 	  resources  :wishlists do
 	 	  collection do
-	 	    get 'delete_product_from_wishlist'
+	 	    get 'remove_product_from_wishlist'
 	    end
 	 	end
   root to: 'welcomes#index'
