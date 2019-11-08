@@ -52,6 +52,9 @@ gem 'imagemagick-identify'
 #google omniauth
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'omniauth-linkedin-oauth2'
+gem 'omniauth-instagram'
 gem 'google-api-client'
 
 #byebug

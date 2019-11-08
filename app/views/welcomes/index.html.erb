@@ -1,26 +1,28 @@
-<div class="container" style="width: 30%; position: center; margin-top: 200px; padding-left: 120px;  ">
+<div class="container" style="width: 30%; position: center; margin-top: 200px; padding-left: 120px; margin-bottom: 20px;">
 	<%= image_tag ("Zapyre.jpg"),  height: "300" ,width: "300" ,class: "img-circle", style:"box-shadow: 12px 12px 5px #D3D3D3" %>
 	</div>	
 
-<div class="container-fluid" style="width: 30%; position: center;box-shadow: 8px 8px 5px #aaaaaa; margin-top: 30px; border-radius: 10px;padding-bottom: 10px;">
-	<div class=" row align-items-center">
-		<div class="col-md-4">
-			<% if user_signed_in? %>
-			  <%= link_to'Logout', destroy_user_session_path, :method => :delete ,class: 'btn btn-danger' %>        
-			<% else %>
-			  <%= link_to'Login', new_user_session_path ,class: 'btn btn-success'  %>  
-			<% end %>
-		</div>
-		<div class="col-md-3">
-			<%= link_to "Register" , new_user_registration_path , class: 'btn btn-success'%>
-		</div>
-		<div class="col-md-1" style="margin-top: 4px">
-			<%= image_tag ("icon-google.png"),  height: "20" ,width: "20" ,class: "img-circle" %>	
-		</div>
-		<div class="col-md">
-			<%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path ,class: 'btn btn-info'%>
-		</div>
-	</div>
+<div class=" row " style="margin-left: 887px;">
+  <% if user_signed_in? %>
+	  <%= link_to'Logout', destroy_user_session_path, :method => :delete ,class: 'btn btn-danger' %>       
+	<% else %>
+</div>
+<div class=" row " style="margin-left: 550px;">
+	<%= link_to'Login', new_user_session_path ,class: 'btn btn-success'  %>  
+	<% if !user_signed_in? %>
+		<%= link_to "Signup" , new_user_registration_path , class: 'btn btn-success'%>
+	<% end %>
+	 	<%= image_tag ("icon-google.png"),  height: "30" ,width: "30" ,class: "img-circle" %>	
+	 	<%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path ,class: 'btn btn-info'%>
+	 	<%= image_tag ("facebook-icon.png"),  height: "30" ,width: "30" ,class: "img-circle" %>	
+	  <%= link_to "Facebook", user_facebook_omniauth_authorize_path ,class: 'btn btn-primary'%>
+	  <%= image_tag ("twitter-icon.png"),  height: "30" ,width: "30" ,class: "img-circle" %>	
+		<%= link_to " Twitter", user_twitter_omniauth_authorize_path, class: 'btn btn-primary' %>
+		<%= image_tag ("linkedin-icon.png"),  height: "30" ,width: "30" ,class: "img-circle" %>	
+		<%= link_to " Linkedin", user_linkedin_omniauth_authorize_path, class: 'btn btn-primary' %>
+		<%= image_tag ("instagram-icon.png"),  height: "30" ,width: "30" ,class: "img-circle" %>	
+		<%= link_to " Instagram", user_instagram_omniauth_authorize_path, class: 'btn btn-primary' %>
+	<% end %>
 </div>
 
 
