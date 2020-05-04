@@ -1,0 +1,23 @@
+#FACEBOOK
+FACEBOOK_APP_ID: '2379637342147222'
+FACEBOOK_APP_SECRET: 02dcddde77759aac736b4c7f7e41ce09
+FACEBOOK_CALLBACK_URL: https://zapyre-shopping.herokuapp.com/users/auth/facebook/callback
+#TWITTER
+TWITTER_APP_ID: qIInw2sialDrOTuxKyhnnS3vD
+TWITTER_APP_SECRET: 83n5QyQqoDU3ccmlZwNAZHjZ9s637wMh2VQlG9KIA8Qfnvbz7L 
+TWITTER_ACCESS_TOKEN: 1192405340232372224-8XT0IT9jgwSsOSLelrZF4K8U5Y0By1 
+TWITTER_ACCESS_TOKEN_SECRET: f1fJlzsuveqExy9PW7CMksipUbUMF6H5PSQlUfJYNJIsy
+TWITTER_CALLBACK_URL: https://zapyre-shopping.herokuapp.com
+#LINKEDIN
+LINKEDIN_APP_ID: 813g5x5gtijpqk
+LINKEDIN_APP_SECRET: dqyPl979gUV5dsyD
+LINKEDIN_CALLBACK_URL: https://zapyre-shopping.herokuapp.com/users/auth/linkedin/callback
+#INSTAGRAM
+INSTAGRAM_ID: '564175654338523'
+INSTAGRAM_SECRET: 'f9e6bd77cba1e5b2f63154cf87c33424'
+INSTAGRAM_CALLBACK_URL: https://zapyre-shopping.herokuapp.com/users/auth/instagram/callback
+#GOOGLE
+GOOGLE_CLIENT_ID: 302401557727-m6ha61fivfl8f82b2nmthl99l2m7dloj.apps.googleusercontent.com
+GOOGLE_CLIENT_SECRET: TrU_UZ9KD_TuT8PUbQsYF46X
+GOOGLE_CALLBACK_URL: https://zapyre-shopping.herokuapp.com/users/auth/google_oauth2/callback
+

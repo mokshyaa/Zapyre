@@ -1,0 +1,23 @@
+<% flash.each do |key, value| %>
+  <div class="<%= flash_class(key) %>"  id="flash">
+    <%= value %>
+  </div>
+<% end %>
+<div class="container-fluid" style="background: #DCDCDC; text-align: center; color: #808080"> 
+   <h1><strong> You successfully linked a credit card to your account</strong></h1></br>
+</div>
+<div class="container-fluid" style=" background:#D3D3D3;text-align: center; box-shadow: 8px 8px 5px #aaaaaa; margin-top: 30px; border-radius: 10px; width: 20%;">
+	<% @cards.each do |card| %>
+	 Card Number: <b> XXXX XXXX XXXX <%= card.last4 %> </b><br>
+	 Card Holder Name: <b> <%= card.name %> </b><br>
+	 Card Brand: <b> <% if card.brand == "Visa" %> </b>
+	 	<%= image_tag ("visa-card.png"),  height: "50" ,width: "50" %><br>
+	 <% elsif card.brand == "MasterCard" %>
+	    <%= image_tag ("master-card.png"),  height: "50" ,width: "80" %><br>
+	 <% elsif card.brand == "Rupay" %>
+		  <%= image_tag ("rupay-card.jpg"),  height: "50" ,width: "80" %><br>
+	 <% end %>	 	
+	 Card Type: <b> <%= card.funding %> </b><br>
+	 Country:<b> <%= card.country %> </b><br>
+	<% end %>
+</div>

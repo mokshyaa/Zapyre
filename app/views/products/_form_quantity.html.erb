@@ -1,11 +1,23 @@
-	<%= form_with(model: @quantity , method: "post", local: true) do |form| %>
-	<p>
-	  <%= form.label :quantity %><br>
-	  <%= form.number_field :quantity %>
-	</p><br>
-	<div class="row">
-		<div class="col-md-6">
+<%= form_with(model: @quantity , method: "post", local: true) do |form| %>
+	<% if Product.where(id: product_id).first.available_quantity == 0 %>
+		<div class="row">
+			  <%= form.label :quantity, disabled: true %><br>
+		</div>
+		<div class="row" style="margin-top: 10px;	">
+		  <%= form.number_field :quantity, disabled: true %>
+		</div><br>
+		<div class="row" style="text-align: center;">
+			<p><%= form.submit 'Add to Cart', class: 'btn btn-success', disabled: true %></p>
+		</div>
+	<% else %>
+		<div class="row">
+			  <%= form.label :quantity %><br>
+		</div>
+		<div class="row" style="margin-top: 10px;	">
+		  <%= form.number_field :quantity %>
+		</div><br>
+		<div class="row" style="text-align: center;">
 			<p><%= form.submit 'Add to Cart', class: 'btn btn-success'%></p>
 		</div>
-	</div>
+	<% end %>
 <% end %>

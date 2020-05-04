@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -6,7 +5,8 @@
 		<%= csrf_meta_tags %>
 		<%= csp_meta_tag %>
 			<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-		<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+			<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+			<%= javascript_include_tag 'https://checkout.stripe.com/checkout.js' %>
 	</head>
 	<body>
 		<nav class="navbar navbar-inverse" style="min-height: 40px; margin: 0px;"	>

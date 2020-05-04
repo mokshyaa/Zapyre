@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateJoinTableProdcutsWishlists < ActiveRecord::Migration[5.2]
   def change
     create_join_table :products, :wishlists do |t|
