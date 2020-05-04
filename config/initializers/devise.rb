@@ -19,17 +19,42 @@ Devise.setup do |config|
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
- 
-  
- # client_id = Rails.application.secrets[:google_client_id]
- # client_secret = Rails.application.secrets[:google_secret]
-  # Configure Google omniauth with proper scope
- # config.omniauth :google_oauth2, client_id, client_secret, {
- #   scope: "email"
- # }
 
-  config.omniauth :google_oauth2, 'GOOGLE_CLIENT_ID', 'GOOGLE_CLIENT_SECRET', {scope: "email"}
- 
+  # client_id = Rails.application.secrets[:google_client_id]
+  # client_secret = Rails.application.secrets[:google_secret]
+  # Configure Google omniauth with proper scope
+  # config.omniauth :google_oauth2, client_id, client_secret, {
+  #   scope: "email"
+  # }
+
+  config.omniauth :google_oauth2,
+                  ENV['GOOGLE_CLIENT_ID'],
+                  ENV['GOOGLE_CLIENT_SECRET'],
+                  {}
+
+  config.omniauth :facebook,
+                  ENV['FACEBOOK_APP_ID'],
+                  ENV['FACEBOOK_APP_SECRET'],
+                  callback_url: ENV['FACEBOOK_CALLBACK_URL'],
+                  scope: 'email',
+                  info_fields: 'email,name'
+
+  config.omniauth :twitter,
+                  ENV['TWITTER_APP_ID'],
+                  ENV['TWITTER_APP_SECRET'],
+                  callback_url: ENV['TWITTER_CALLBACK_URL'],
+                  scope: 'email'
+
+  config.omniauth :linkedin,
+                  ENV['LINKEDIN_APP_ID'],
+                  ENV['LINKEDIN_APP_SECRET'],
+                  callback_url: ENV['LINKEDIN_CALLBACK_URL']
+
+  config.omniauth :instagram,
+                  ENV['INSTAGRAM_ID'],
+                  ENV['INSTAGRAM_SECRET'],
+                  scope: 'email',
+                  info_fields: 'email,name'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'

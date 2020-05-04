@@ -1,8 +1,12 @@
 <div class="container-fluid" style="background: grey;">
   <h1><strong>Product Details</strong></h1><br>
 </div>
-<p id="notice"><%= notice %></p>
- <div class="col-md-7"><br>          
+<% flash.each do |key, value| %>
+      <div class="<%= flash_class(key) %>">
+            <%= value %>
+      </div>
+<% end %>
+ <div class="col-md-7" style="text-align: center;"><br>          
     <%= image_tag @product.image.url(:large),height: "500>", width: "500>"  ,class: "rounded mx-auto d-block"%> <br>
  </div>
  <div class="col-md-5"><br><br><br><br>    
@@ -10,7 +14,12 @@
     <b> Price :</b> <%= @product.price %> ₹ <br>                  
     <b> Brand :</b> <%= @product.brand %><br>          
     <b> Description :</b> <%= @product.description %><br>                
-    <b> Offer :</b> <%= @product.offer %><br><br>   
+    <b> Offer :</b> <%= @product.offer %><br><br>
+    <% if @product.available_quantity != 0 %>
+      <b> Available Quantity :</b> <h4 style="color: green; font-weight: bold;"> <%=  @product.available_quantity %> </h4> <br><br>
+    <% else %>
+      <b> Available Quantity :</b> <h4 style="color: red; font-weight: bold;"> SOLD OUT </h4> <br><br>
+    <% end %>   
     <% if user_signed_in? %>
       <% if current_user.admin? %>
         <b><%= link_to 'Edit', edit_product_path(@product), class: 'btn btn-primary ' %></b> |

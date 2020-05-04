@@ -1,7 +1,7 @@
 <div class="container-fluid" style="background: grey;">
   <h1><strong>Forgot your Passsword?</strong></h1><br>
 </div>
-<div class="container-fluid" style="width: 30%; position: center;box-shadow: 8px 8px 5px #aaaaaa; margin-top: 30px; border-radius: 10px;padding-bottom: 10px;">
+<div class="container-fluid" style="width: 30%; position: center;box-shadow: 8px 8px 5px #aaaaaa; background-color: rgb(220,220,220); margin-top: 30px; border-radius: 10px;padding-bottom: 10px;">
 	<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
 	  <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -14,5 +14,5 @@
 	    <%= f.label "Send me reset password instructions", class: 'btn btn-success' %>
 	  </div>
 	<% end %>
-	<%= render "users/shared/links" %>
+	<%= link_to "Back", :back , class: 'btn btn-info '%>
 </div>

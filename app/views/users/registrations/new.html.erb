@@ -1,18 +1,22 @@
 <div class="container-fluid" style="background: grey;">
   <h1><strong>Sign Up</strong></h1><br>
 </div>
-
-<div class="container-fluid" style="width: 30%; position: center;box-shadow: 8px 8px 5px #aaaaaa; margin-top: 30px; border-radius: 10px;padding-bottom: 10px;">
+<% flash.each do |key, value| %>
+  <div class="<%= flash_class(key) %>" id="flash">
+    <%= value %>
+  </div>
+<% end %>
+<div class="container-fluid" style="width: 30%; position: center;box-shadow: 8px 8px 5px #aaaaaa; background-color: rgb(220,220,220); margin-top: 30px; border-radius: 10px;padding-bottom: 10px;">
 	<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 		<%= render "devise/shared/error_messages", resource: resource %>
 		  <div class="form-group">
 				<h4><%= f.label :name %></h4>
-				<%= f.text_field :name, class: 'form-control' %>
+				<%= f.text_field :name,  autofocus: true, class: 'form-control' %>
 			</div>
 
 		    <div class="form-group">
 				<h4><%= f.label :email %></h4>
-				<%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+				<%= f.email_field :email, autocomplete: "email", class: 'form-control' %>
 			</div>
 
 			<div class="form-group">
@@ -29,7 +33,7 @@
 			</div>
 
 			<div class="actions">
-				<%= f.submit "Sign up",  class: 'btn btn-secondary' %>
+				<%= f.submit "Sign up",  class: 'btn btn-primary' %>
 			</div>
 	<% end %><br>
 	<%= render "users/shared/links" %>

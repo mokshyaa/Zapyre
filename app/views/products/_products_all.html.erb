@@ -9,29 +9,53 @@
 			<%end%>
 			<br>
 				<% @products.each do |product| %>
-					<div class="col-md-4" style="box-shadow: 8px 8px 5px #aaaaaa;"><br> 					
-						<%= image_tag product.image.url(:medium),height: "200>", width: "200>"	,class: "rounded mx-auto d-block"%>	<br>						
+				<% if product.available_quantity != 0 %>
+					<div class="col-md-4" style="box-shadow: 8px 8px 5px #aaaaaa;text-align: center; min-height: 760px;"><br> 					
+						<%= image_tag product.image.url(:medium),height: "200>", width: "200>"	,class: "rounded mx-auto d-block"%>	<br>
+				<% elsif product.available_quantity == 0 %>
+					<div class="col-md-4" style="box-shadow: 8px 8px 5px #aaaaaa;text-align: center; min-height: 760px; "><br> 					
+						<%= image_tag product.image.url(:medium),height: "200>", width: "200>"	,class: "rounded mx-auto d-block", style: "opacity: .5;"%>	<br>
+				<% end %>					
 						<b> Name :</b> <%= product.name %><br>					 
 						<b> Price :</b> <%= product.price %> ₹ <br>					 
 						<b> Brand :</b> <%= product.brand %><br>			
 						<b> Description :</b> <%= product.description %><br>					
 						<b> Offer :</b> <%= product.offer %><br><br>
+						<% if product.available_quantity != 0 %>
+							<b> Available Quantity :</b> <h4 style="color: green; font-weight: bold;"> <%=  product.available_quantity %> </h4> <br><br>
+						<% else %>
+							<b> Available Quantity :</b> <h4 style="color: red; font-weight: bold;"> SOLD OUT </h4> <br><br>
+						<% end %>
 							<div class="row">
-								<div class="col-md-3" style="padding-bottom: 5px;"> 
-									<b><%= link_to 'Show',product_path(product) ,class: 'btn btn-info  btn-lg' %> </b><br>
-								</div>
 								<% if current_user && current_user.admin? %>
-									<div class="col-md-3" style="padding-bottom: 5px;">
-										<b><%= link_to 'Edit', edit_product_path(product), class: 'btn btn-primary  btn-lg'%> </b>
+								<div class= "col-md-3" style="text-align: center; padding-bottom: 5px; "> 
+										<b><%= link_to 'Show',product_path(product) ,class: 'btn btn-info '  %> </b><br>
 									</div>
-									<div class="col-md-3" style="padding-bottom: 5px;">							
-										<b><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger  btn-lg	' %></b><br>
-									</div>									
+									<div class="col-md-3" style="text-align: center;padding-bottom: 5px; ">
+										<b><%= link_to 'Edit', edit_product_path(product), class: 'btn btn-primary '%> </b>
+									</div>
+									<div class="col-md-3" style="text-align: center;padding-bottom: 5px; ">							
+										<b><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger ' %></b><br>
+									</div>	
+								<% else %>
+									<div class= "col-md" style="text-align: center; padding-bottom: 5px; "> 
+										<b><%= link_to 'Show',product_path(product) ,class: 'btn btn-info '  %> </b><br>
+									</div>								
 								<%end%>
 							</div>
 								<% if current_user && !current_user.admin? %>
-									<%= render partial: "form_cart", locals: {product_id: product.id} %>
-									<%= render partial: "form_wishlist", locals: {product_id: product.id} %>				
+								<div class="container-fluid">
+									<div class="row" style="margin-bottom: 5px;">
+										<div class="col-md" style="text-align: center;" >
+											<%= render partial: "form_cart", locals: {product_id: product.id} %>
+										</div>
+									</div>
+									<div class="row" style="margin-bottom: 5px;">
+										<div class="col-md" style=" text-align: center;">
+											<%= render partial: "form_wishlist", locals: {product_id: product.id} %>
+										</div>
+									</div>
+								</div>				
 								<%end%>					
 					</div>			   
 				<%end%>

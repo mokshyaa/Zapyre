@@ -1,10 +1,10 @@
-<div class="row">	
-	<div class="col-md-6"> 
-		<%= form_with(url: wishlists_path(wishlist: @wishlist), method: "post", local: true) do |form| %>
-			<p><%= form.hidden_field :product_id, value: product_id  %></p>
-			<p><%= form.submit 'Wishlist',class: 'btn btn-primary',  data: { "disable-with": "Wishlisted"}%></p>
-		<% end %>
-	</div>
-</div>
+<%= form_with(url: wishlists_path(wishlist: @wishlist), method: "post", local: true) do |form| %>
+	<%= form.hidden_field :product_id, value: product_id  %>
+	<% if current_user.wishlist.nil? || current_user.wishlist.products.where(id: product_id).first.nil? %>
+		<%= form.submit 'Wishlist',class: 'btn btn-primary'%>
+	<% else %>
+		<%= form.submit 'Added to the Wishlist',class: 'btn btn-primary' , disabled: true%>
+	<% end %>
+<% end %>	
 
 

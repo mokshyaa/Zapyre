@@ -3,7 +3,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
-  before_action :authenticate_user!, only: [:show, :index]
+  before_action :authenticate_user!, only: %i[show index]
   attr_accessor :avatar, :name
 
   # GET /resource/sign_up
@@ -40,12 +40,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-   protected
+  protected
 
-    def sign_up(resource_name, resoure)
+  def sign_up(resource_name, resoure)
     # just overwrite the default one
     # to prevent auto sign in as the new sign up
-    end
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
@@ -53,9 +53,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up.
-    def after_sign_up_path_for(resource)
-      new_user_session_path
-    end
+  def after_sign_up_path_for(_resource)
+    new_user_session_path
+  end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)

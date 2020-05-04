@@ -1,14 +1,21 @@
 <div class="container-fluid" style="background: grey;">
   <h1><strong>Edit User</strong></h1><br>
 </div>
-<div class="container-fluid" style="width: 30%; position: center;box-shadow: 8px 8px 5px #aaaaaa; margin-top: 30px;">
+<% flash.each do |key, value| %>
+  <div class="<%= flash_class(key) %>" id="flash">
+    <%= value %>
+  </div>
+<% end %>
+<div class="container-fluid" style="width: 30%; position: center;box-shadow: 8px 8px 5px #aaaaaa; background-color: rgb(220,220,220); margin-top: 30px; border-radius: 10px;padding-bottom: 10px;">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
-      <div class="form-group">
+      <div class="form-group" style= "margin-top: 30px;">
         <%= f.label "Profile Picture" %><br />
         <%= f.file_field :avatar %>
       </div>
-      
+      <div style="text-align: right; margin-top: -140px; margin-right:35px;">
+      <%= image_tag current_user.avatar(:medium),height: "140",width: "140",class: "img-circle" , style:"box-shadow: 12px 12px 5px #696969"%>
+      </div>
        <div class="form-group">
         <h4><%= f.label :name %></h4>
         <%= f.text_field :name , class: 'form-control'%>
@@ -51,5 +58,5 @@
 
   <p >Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete , class: 'btn btn-danger'%></p>
 
-  <%= link_to "Back", :back , class: 'btn btn-secondary '%>
+  <%= link_to "Back", :back , class: 'btn btn-info '%>
 </b>
