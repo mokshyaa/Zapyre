@@ -46,7 +46,7 @@ gem 'omniauth-twitter'
 gem 'paperclip'
 gem 'pg'
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 3.12'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # RuboCop
